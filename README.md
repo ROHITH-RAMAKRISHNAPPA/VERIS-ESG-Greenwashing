@@ -2,13 +2,11 @@
 
 > A forensic NLP pipeline that cross-validates corporate sustainability disclosures against satellite-calibrated facility-level CO₂e emissions from Climate TRACE v5.4.1.
 
----
 
 ## 🛰️ Live Dashboard
 
 > **[Launch VERIS Dashboard](https://veris-esg-greenwashing.streamlit.app)** — hosted on Streamlit Community Cloud
 
----
 
 ## 📄 Project Report & Data
 
@@ -16,7 +14,6 @@
 
 Includes the submitted PDF report, appendix (AI declaration, data dictionary, roles), and supporting data files that are too large for GitHub.
 
----
 
 ## Overview
 
@@ -24,7 +21,6 @@ ESG rating systems rest on two assumptions the data consistently undermine — t
 
 **VERIS** (Verified Emissions vs. Reported Information Score) addresses this gap. It computes four year-pair NLP signals across 119 sustainability reports from 12 globally listed firms (2014-2024, 4.0 million tokens), aggregates them via AHP-weighted TOPSIS against facility-level CO₂e estimates from Climate TRACE v5.4.1, and produces a single composite disclosure-reality gap score per firm-year.
 
----
 
 ## Key Results
 
@@ -40,7 +36,7 @@ ESG rating systems rest on two assumptions the data consistently undermine — t
 | Strongest Q2 greenwashing signal | ExxonMobil 2022-2023 (VERIS = 0.8944) |
 | Second strongest Q2 signal | Rio Tinto 2018-2019 (VERIS = 0.8434) |
 
----
+
 
 ## NLP Signals and AHP Weights
 
@@ -53,7 +49,6 @@ ESG rating systems rest on two assumptions the data consistently undermine — t
 
 AHP weights derived via Saaty's (1987) eigenvector method. CR = 0.00 by construction. Five sensitivity scenarios tested: Balanced, Equal-Weights, SBERT-Heavy, LDA-JSD-Heavy, Jaccard-Heavy.
 
----
 
 ## Greenwashing Quadrants
 
@@ -66,7 +61,6 @@ AHP weights derived via Saaty's (1987) eigenvector method. CR = 0.00 by construc
 
 Corpus median VERIS = 0.162.
 
----
 
 ## Repository Structure
 
@@ -95,7 +89,7 @@ Corpus median VERIS = 0.162.
 └── requirements.txt
 ```
 
----
+
 
 ## Run Order
 
@@ -113,7 +107,7 @@ jupyter nbconvert --to notebook --execute notebooks/06_visualisations.ipynb
 streamlit run notebooks/VERIS_ESG_Greenwashing.py
 ```
 
----
+
 
 ## Data Sources
 
@@ -122,11 +116,10 @@ streamlit run notebooks/VERIS_ESG_Greenwashing.py
 
 > Raw PDFs and Climate TRACE CSVs are not tracked in this repository due to file size. See the Google Drive folder above.
 
----
+
 
 ## Causal Specification
 
-```
 Y_it = θ * D_it + g(X_it) + e_it     [DoubleML Partially Linear Model]
 D_it = m(X_it) + v_it
 
@@ -137,7 +130,7 @@ X  = {lagged VERIS score, log CO2e, EU firm flag, sector dummies}
 
 Nuisance functions estimated by LassoCV with 5-fold cross-fitting and RidgeCV fallback. HC3-robust standard errors.
 
----
+
 
 ## Team
 
@@ -151,7 +144,6 @@ Nuisance functions estimated by LassoCV with 5-fold cross-fitting and RidgeCV fa
 | **Koushik Chowdhury** | Ran fixed-effects panel regressions with HC3-robust standard errors. Applied DoubleML with cross-fitted LassoCV to estimate the ATE of the 2021 CSRD on emissions. Conducted placebo falsification test using counterfactual treatment year 2018. |
 | **Rohith Ramakrishnappa** | Built all 16 visualisations and the interactive Streamlit dashboard. Integrated all phase outputs into the final report. Managed Harvard referencing, formatting, and final proofreading. Compiled and submitted the report and appendix. |
 
----
 
 ## References
 
@@ -161,7 +153,3 @@ Nuisance functions estimated by LassoCV with 5-fold cross-fitting and RidgeCV fa
 - Kim, E.H. and Lyon, T.P. (2015). Greenwash vs. brownwash. *Organization Science*, 26(3).
 - Reimers, N. and Gurevych, I. (2019). Sentence-BERT. *EMNLP 2019*.
 - Robinson, P.M. (1988). Root-N-consistent semiparametric regression. *Econometrica*, 56(4).
-
----
-
-*All outputs are fully reproducible from publicly available data. No commercial ESG ratings data required.*
