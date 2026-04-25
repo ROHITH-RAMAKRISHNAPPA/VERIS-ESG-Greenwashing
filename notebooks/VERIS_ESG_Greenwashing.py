@@ -55,10 +55,10 @@ st.markdown("""
 [class*="css"] { font-family: 'Space Grotesk', sans-serif; }
 
 /* KPI cards */
-.kpi-card { background: #061209; border: 1px solid #1b4332; border-radius: 10px; padding: 14px 18px; text-align: center; margin-bottom: 4px; }
-.kpi-num  { font-family: 'JetBrains Mono', monospace; font-size: 1.8rem; font-weight: 600; color: #52b788; line-height: 1.1; }
-.kpi-lbl  { font-size: 0.68rem; color: #74c69d; text-transform: uppercase; letter-spacing: .1em; margin-top: 3px; }
-.kpi-sub  { font-size: 0.72rem; color: #4a7c59; margin-top: 2px; }
+.kpi-card { background: #1b4332 !important; border: 1px solid #2d6a4f !important; border-radius: 10px; padding: 14px 18px; text-align: center; margin-bottom: 4px; }
+.kpi-num  { font-family: 'JetBrains Mono', monospace !important; font-size: 1.8rem !important; font-weight: 600 !important; color: #52b788 !important; line-height: 1.1 !important; }
+.kpi-lbl  { font-size: 0.68rem !important; color: #95d5b2 !important; text-transform: uppercase !important; letter-spacing: .1em !important; margin-top: 3px !important; }
+.kpi-sub  { font-size: 0.72rem !important; color: #74c69d !important; margin-top: 2px !important; }
 
 /* Info boxes */
 .info-box { background: #f0faf4; border-left: 4px solid #2d6a4f; border-radius: 6px; padding: 9px 14px; font-size: .83rem; color: #1b4332; margin: 6px 0; }
@@ -96,10 +96,16 @@ st.markdown("""
 .hero-sub    { font-size: 0.85rem; color: #74c69d; margin-top: 6px; }
 
 /* Firm KPI panel */
-.firm-panel  { background: #f0faf4; border: 1px solid #2d6a4f; color: #1b4332; border-radius: 12px; padding: 18px 22px; }
-.score-big   { font-family: 'JetBrains Mono', monospace; font-size: 2.8rem; font-weight: 700; line-height: 1; }
-.quad-badge  { display: inline-block; padding: 4px 14px; border-radius: 16px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 6px; }
-.verdict-box { background: #ffffff; border: 1px solid #a7f3d0; color: #1f2937; border-radius: 8px; padding: 12px 16px; font-size: 0.85rem; color: #1f2937; line-height: 1.5; margin-top: 10px; }
+.firm-panel  { background: #f0faf4 !important; border: 1px solid #2d6a4f !important; border-radius: 12px; padding: 18px 22px; }
+.firm-panel * { color: #1b4332 !important; }
+.score-big   { font-family: 'JetBrains Mono', monospace !important; font-size: 2.8rem !important; font-weight: 700 !important; line-height: 1 !important; }
+.quad-badge  { display: inline-block; padding: 4px 14px; border-radius: 16px; font-size: 0.78rem !important; font-weight: 700 !important; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 6px; }
+.verdict-box { background: #ffffff !important; border: 1px solid #a7f3d0 !important; border-radius: 8px; padding: 12px 16px !important; font-size: 0.85rem !important; line-height: 1.5 !important; margin-top: 10px; }
+.verdict-box * { color: #1f2937 !important; }
+/* Force Streamlit app to light background */
+.stApp { background-color: #ffffff !important; }
+[data-testid="stAppViewContainer"] { background-color: #ffffff !important; }
+[data-testid="stHeader"] { background-color: #ffffff !important; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -474,6 +480,9 @@ st.markdown("""
 <div style="padding:18px 0 8px 0;">
   <div style="font-size:1.9rem;font-weight:800;color:#1b4332;letter-spacing:-0.5px;line-height:1.1;">
     🛰️ VERIS: Detecting Greenwashing Through Satellite-Verified NLP
+  </div>
+  <div style="font-size:0.85rem;color:#4a7c59;margin-top:4px;">
+    Verified Emissions vs. Reported Information Score &nbsp;·&nbsp; 12 Firms &nbsp;·&nbsp; 2014–2024 &nbsp;·&nbsp; Climate TRACE v5.4.1 &nbsp;·&nbsp; Group 9
   </div>
 </div>
 """, unsafe_allow_html=True)
@@ -1055,7 +1064,7 @@ if IS_TECH:
         fmt = {c:"{:.3f}" for c in ["veris_score","sbert_drift","jaccard_overlap"] if c in lb2.columns}
         styled = lb2[show_cols].style.format(fmt)
         if "greenwashing_quadrant" in show_cols:
-            styled = styled.applymap(_qcol,subset=["greenwashing_quadrant"])
+            styled = styled.map(_qcol,subset=["greenwashing_quadrant"])
         st.dataframe(styled,use_container_width=True,height=500,hide_index=True)
     
 
@@ -1978,7 +1987,7 @@ else:
         fmt_biz = {c: "{:.3f}" for c in ["veris_score"] if c in biz_lb.columns}
         styled_biz = biz_lb[biz_cols].style.format(fmt_biz)
         if "greenwashing_quadrant" in biz_cols:
-            styled_biz = styled_biz.applymap(_biz_qcol, subset=["greenwashing_quadrant"])
+            styled_biz = styled_biz.map(_biz_qcol, subset=["greenwashing_quadrant"])
         st.dataframe(styled_biz, use_container_width=True, height=560, hide_index=True)
 
         st.markdown("""<div class="warn-box">
