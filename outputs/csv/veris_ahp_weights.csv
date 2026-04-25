@@ -1,0 +1,5 @@
+criterion,weight,weight_pct,CR,lambda_max
+sbert_drift,0.4615384615384616,46.15,-0.0,4.0
+jaccard_overlap,0.23076923076923075,23.08,-0.0,4.0
+lda_jsd,0.23076923076923075,23.08,-0.0,4.0
+vader_delta,0.0769230769230769,7.69,-0.0,4.0

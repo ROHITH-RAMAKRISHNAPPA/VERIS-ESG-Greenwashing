@@ -1,0 +1,107 @@
+firm_name,year_from,year_to,veris_score,greenwashing_quadrant
+BP,2014,2015,0.1481,Insufficient data
+BP,2015,2016,0.1319,4 - Stagnant
+BP,2016,2017,0.1447,3 - Greenhushing
+BP,2017,2018,0.168,1 - Genuine improvement
+BP,2018,2019,0.1885,2 - Greenwashing signal
+BP,2019,2020,0.2011,1 - Genuine improvement
+BP,2020,2021,0.1303,Insufficient data -- CT coverage discontinuity
+BP,2021,2022,0.1606,3 - Greenhushing
+BP,2022,2023,0.133,3 - Greenhushing
+BP,2023,2024,0.145,3 - Greenhushing
+Chevron,2014,2015,0.1664,Insufficient data
+Chevron,2015,2016,0.103,4 - Stagnant
+Chevron,2016,2017,0.1344,4 - Stagnant
+Chevron,2017,2018,0.1516,4 - Stagnant
+Chevron,2018,2019,0.1763,2 - Greenwashing signal
+Chevron,2019,2020,0.1988,1 - Genuine improvement
+Chevron,2020,2021,0.2452,Insufficient data -- CT coverage discontinuity
+Chevron,2021,2022,0.1526,4 - Stagnant
+Chevron,2022,2023,0.1373,3 - Greenhushing
+Chevron,2023,2024,0.6685,2 - Greenwashing signal
+ConocoPhillips,2014,2015,0.3305,Insufficient data
+ConocoPhillips,2015,2016,0.1406,4 - Stagnant
+ConocoPhillips,2016,2017,0.1517,4 - Stagnant
+ConocoPhillips,2017,2018,0.6644,2 - Greenwashing signal
+ConocoPhillips,2018,2019,0.3427,2 - Greenwashing signal
+ConocoPhillips,2019,2020,0.2451,1 - Genuine improvement
+ConocoPhillips,2020,2021,0.2348,Insufficient data -- CT coverage discontinuity
+ConocoPhillips,2021,2022,0.1377,4 - Stagnant
+ConocoPhillips,2022,2023,0.2659,2 - Greenwashing signal
+ConocoPhillips,2023,2024,0.0786,3 - Greenhushing
+Eni,2015,2016,0.1495,4 - Stagnant
+Eni,2016,2017,0.2508,2 - Greenwashing signal
+Eni,2017,2018,0.168,1 - Genuine improvement
+Eni,2018,2019,0.1886,2 - Greenwashing signal
+Eni,2019,2020,0.1671,1 - Genuine improvement
+Eni,2020,2021,0.2471,Insufficient data -- CT coverage discontinuity
+Eni,2021,2022,0.1682,2 - Greenwashing signal
+Eni,2022,2023,0.1623,3 - Greenhushing
+Eni,2023,2024,0.1469,3 - Greenhushing
+Equinor,2014,2015,0.1253,Insufficient data
+Equinor,2015,2016,0.1699,1 - Genuine improvement
+Equinor,2016,2017,0.1116,4 - Stagnant
+Equinor,2017,2018,0.3185,1 - Genuine improvement
+Equinor,2018,2019,0.189,1 - Genuine improvement
+Equinor,2019,2020,0.1246,3 - Greenhushing
+Equinor,2020,2021,0.1256,Insufficient data -- CT coverage discontinuity
+Equinor,2021,2022,0.3095,1 - Genuine improvement
+Equinor,2022,2023,0.1598,3 - Greenhushing
+Equinor,2023,2024,0.1774,1 - Genuine improvement
+ExxonMobil,2017,2018,0.15,4 - Stagnant
+ExxonMobil,2022,2023,0.8944,2 - Greenwashing signal
+ExxonMobil,2023,2024,0.2352,2 - Greenwashing signal
+Glencore,2014,2015,0.1686,Insufficient data
+Glencore,2015,2016,0.1175,4 - Stagnant
+Glencore,2016,2017,0.1593,4 - Stagnant
+Glencore,2017,2018,0.1875,2 - Greenwashing signal
+Glencore,2018,2019,0.1807,2 - Greenwashing signal
+Glencore,2019,2020,0.1599,3 - Greenhushing
+Glencore,2020,2021,0.1203,Insufficient data -- CT coverage discontinuity
+Glencore,2021,2022,0.2027,1 - Genuine improvement
+Glencore,2022,2023,0.0908,4 - Stagnant
+Glencore,2023,2024,0.1929,2 - Greenwashing signal
+Repsol,2017,2018,0.127,4 - Stagnant
+Repsol,2018,2019,0.1602,3 - Greenhushing
+Repsol,2019,2020,0.2035,1 - Genuine improvement
+Repsol,2020,2021,0.1945,Insufficient data -- CT coverage discontinuity
+Repsol,2021,2022,0.1065,4 - Stagnant
+Repsol,2022,2023,0.1445,4 - Stagnant
+Repsol,2023,2024,0.1125,3 - Greenhushing
+RioTinto,2014,2015,0.1565,Insufficient data
+RioTinto,2015,2016,0.154,4 - Stagnant
+RioTinto,2016,2017,0.1235,4 - Stagnant
+RioTinto,2017,2018,0.2155,2 - Greenwashing signal
+RioTinto,2018,2019,0.8434,2 - Greenwashing signal
+RioTinto,2019,2020,0.1718,1 - Genuine improvement
+RioTinto,2020,2021,0.2958,Insufficient data -- CT coverage discontinuity
+RioTinto,2021,2022,0.1542,4 - Stagnant
+RioTinto,2022,2023,0.7018,2 - Greenwashing signal
+RioTinto,2023,2024,0.8935,1 - Genuine improvement
+Shell,2014,2015,0.1625,Insufficient data
+Shell,2015,2016,0.1357,3 - Greenhushing
+Shell,2016,2017,0.1958,2 - Greenwashing signal
+Shell,2017,2018,0.1923,2 - Greenwashing signal
+Shell,2018,2019,0.1624,4 - Stagnant
+Shell,2019,2020,0.2069,1 - Genuine improvement
+Shell,2020,2021,0.2719,Insufficient data -- CT coverage discontinuity
+Shell,2021,2022,0.1316,4 - Stagnant
+Shell,2022,2023,0.1102,4 - Stagnant
+TotalEnergies,2016,2017,0.1651,2 - Greenwashing signal
+TotalEnergies,2017,2018,0.1208,4 - Stagnant
+TotalEnergies,2018,2019,0.1475,4 - Stagnant
+TotalEnergies,2019,2020,0.1434,3 - Greenhushing
+TotalEnergies,2020,2021,0.2524,Insufficient data -- CT coverage discontinuity
+TotalEnergies,2021,2022,0.2036,2 - Greenwashing signal
+TotalEnergies,2022,2023,0.1422,4 - Stagnant
+TotalEnergies,2023,2024,0.1282,3 - Greenhushing
+Unilever,2014,2015,0.9282,Insufficient data
+Unilever,2015,2016,0.1489,Insufficient data
+Unilever,2016,2017,0.1462,Insufficient data
+Unilever,2017,2018,0.1393,Insufficient data
+Unilever,2018,2019,0.1492,Insufficient data
+Unilever,2019,2020,0.2075,Insufficient data
+Unilever,2020,2021,0.203,Insufficient data
+Unilever,2021,2022,0.2377,Insufficient data
+Unilever,2022,2023,0.1176,Insufficient data
+Unilever,2023,2024,0.2511,Insufficient data

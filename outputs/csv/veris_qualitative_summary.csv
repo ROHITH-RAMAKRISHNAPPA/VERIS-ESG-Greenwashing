@@ -1,0 +1,13 @@
+firm_name,avg_lda_jsd,avg_sbert_drift,n_year_pairs,topic_shift_label,tercile_cutoff_t33,tercile_cutoff_t67
+BP,0.1368,0.0113,10,Moderate topic shifts,0.1134,0.2091
+Chevron,0.1976,0.0243,10,Moderate topic shifts,0.1134,0.2091
+ConocoPhillips,0.2322,0.0377,10,Significant topic shifts,0.1134,0.2091
+Eni,0.1108,0.0215,9,Minimal topic shifts,0.1134,0.2091
+Equinor,0.1134,0.0193,10,Minimal topic shifts,0.1134,0.2091
+ExxonMobil,0.4806,0.0668,3,Significant topic shifts,0.1134,0.2091
+Glencore,0.0894,0.0133,10,Minimal topic shifts,0.1134,0.2091
+Repsol,0.1134,0.0103,7,Moderate topic shifts,0.1134,0.2091
+RioTinto,0.3661,0.0592,10,Significant topic shifts,0.1134,0.2091
+Shell,0.0901,0.021,9,Minimal topic shifts,0.1134,0.2091
+TotalEnergies,0.1282,0.015,8,Moderate topic shifts,0.1134,0.2091
+Unilever,0.242,0.033,10,Significant topic shifts,0.1134,0.2091

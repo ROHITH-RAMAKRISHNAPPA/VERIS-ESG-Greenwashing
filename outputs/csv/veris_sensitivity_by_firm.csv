@@ -1,0 +1,13 @@
+Firm,mean_rank_spread,max_rank_spread,n_year_pairs,mean_balanced_rank,stability_label,stability_tercile_t33,stability_tercile_t67
+ExxonMobil,13.0,19.0,3,30.333333333333332,Stable,18.7167,23.5667
+RioTinto,14.3,30.0,10,37.3,Stable,18.7167,23.5667
+ConocoPhillips,16.3,46.0,10,41.4,Stable,18.7167,23.5667
+Chevron,16.4,29.0,10,55.3,Stable,18.7167,23.5667
+TotalEnergies,19.875,32.0,8,63.625,Moderate,18.7167,23.5667
+Unilever,20.3,35.0,10,48.4,Moderate,18.7167,23.5667
+Shell,23.22222222222222,62.0,9,54.333333333333336,Moderate,18.7167,23.5667
+Equinor,23.3,64.0,10,58.4,Moderate,18.7167,23.5667
+Glencore,24.1,37.0,10,61.1,Volatile,18.7167,23.5667
+Repsol,27.714285714285715,59.0,7,70.0,Volatile,18.7167,23.5667
+BP,31.3,52.0,10,65.8,Volatile,18.7167,23.5667
+Eni,41.666666666666664,58.0,9,46.111111111111114,Volatile,18.7167,23.5667

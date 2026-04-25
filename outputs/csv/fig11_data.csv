@@ -1,0 +1,213 @@
+firm_name,year_from,year_to,sbert_drift,eu_flag,period,group
+BP,2014,2015,0.0101,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+BP,2015,2016,0.0095,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+BP,2016,2017,0.0077,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+BP,2017,2018,0.0074,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+BP,2018,2019,0.023,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+BP,2019,2020,0.0155,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+BP,2020,2021,0.0074,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+BP,2021,2022,0.0138,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+BP,2022,2023,0.007,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+BP,2023,2024,0.0113,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Chevron,2014,2015,0.0131,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+Chevron,2015,2016,0.0077,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+Chevron,2016,2017,0.0084,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+Chevron,2017,2018,0.0136,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+Chevron,2018,2019,0.0139,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+Chevron,2019,2020,0.0218,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+Chevron,2020,2021,0.0284,False,Post-CSRD (2021+),"Non-EU Firms
+Post-CSRD (2021+)"
+Chevron,2021,2022,0.0117,False,Post-CSRD (2021+),"Non-EU Firms
+Post-CSRD (2021+)"
+Chevron,2022,2023,0.0084,False,Post-CSRD (2021+),"Non-EU Firms
+Post-CSRD (2021+)"
+Chevron,2023,2024,0.116,False,Post-CSRD (2021+),"Non-EU Firms
+Post-CSRD (2021+)"
+ConocoPhillips,2014,2015,0.0458,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+ConocoPhillips,2015,2016,0.0119,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+ConocoPhillips,2016,2017,0.0149,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+ConocoPhillips,2017,2018,0.1284,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+ConocoPhillips,2018,2019,0.0646,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+ConocoPhillips,2019,2020,0.0341,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+ConocoPhillips,2020,2021,0.0341,False,Post-CSRD (2021+),"Non-EU Firms
+Post-CSRD (2021+)"
+ConocoPhillips,2021,2022,0.0045,False,Post-CSRD (2021+),"Non-EU Firms
+Post-CSRD (2021+)"
+ConocoPhillips,2022,2023,0.0347,False,Post-CSRD (2021+),"Non-EU Firms
+Post-CSRD (2021+)"
+ConocoPhillips,2023,2024,0.0044,False,Post-CSRD (2021+),"Non-EU Firms
+Post-CSRD (2021+)"
+Eni,2015,2016,0.0139,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Eni,2016,2017,0.0424,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Eni,2017,2018,0.0239,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Eni,2018,2019,0.0099,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Eni,2019,2020,0.0218,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Eni,2020,2021,0.0387,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Eni,2021,2022,0.0124,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Eni,2022,2023,0.0133,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Eni,2023,2024,0.0169,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Equinor,2014,2015,0.0089,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Equinor,2015,2016,0.0122,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Equinor,2016,2017,0.0101,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Equinor,2017,2018,0.0527,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Equinor,2018,2019,0.008,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Equinor,2019,2020,0.0071,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Equinor,2020,2021,0.0109,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Equinor,2021,2022,0.0441,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Equinor,2022,2023,0.0245,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Equinor,2023,2024,0.0145,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+ExxonMobil,2017,2018,0.013,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+ExxonMobil,2022,2023,0.1696,False,Post-CSRD (2021+),"Non-EU Firms
+Post-CSRD (2021+)"
+ExxonMobil,2023,2024,0.0179,False,Post-CSRD (2021+),"Non-EU Firms
+Post-CSRD (2021+)"
+Glencore,2014,2015,0.012,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+Glencore,2015,2016,0.0182,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+Glencore,2016,2017,0.0176,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+Glencore,2017,2018,0.0105,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+Glencore,2018,2019,0.0084,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+Glencore,2019,2020,0.0129,False,Pre-CSRD (before 2021),"Non-EU Firms
+Pre-CSRD (before 2021)"
+Glencore,2020,2021,0.0142,False,Post-CSRD (2021+),"Non-EU Firms
+Post-CSRD (2021+)"
+Glencore,2021,2022,0.0262,False,Post-CSRD (2021+),"Non-EU Firms
+Post-CSRD (2021+)"
+Glencore,2022,2023,0.0085,False,Post-CSRD (2021+),"Non-EU Firms
+Post-CSRD (2021+)"
+Glencore,2023,2024,0.0047,False,Post-CSRD (2021+),"Non-EU Firms
+Post-CSRD (2021+)"
+Repsol,2017,2018,0.0077,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Repsol,2018,2019,0.0146,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Repsol,2019,2020,0.0245,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Repsol,2020,2021,0.0115,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Repsol,2021,2022,0.0057,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Repsol,2022,2023,0.0053,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Repsol,2023,2024,0.0031,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+RioTinto,2014,2015,0.0144,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+RioTinto,2015,2016,0.0127,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+RioTinto,2016,2017,0.0113,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+RioTinto,2017,2018,0.0252,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+RioTinto,2018,2019,0.1557,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+RioTinto,2019,2020,0.0223,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+RioTinto,2020,2021,0.0443,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+RioTinto,2021,2022,0.0125,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+RioTinto,2022,2023,0.1313,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+RioTinto,2023,2024,0.1623,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Shell,2014,2015,0.0197,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Shell,2015,2016,0.0103,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Shell,2016,2017,0.0232,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Shell,2017,2018,0.0266,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Shell,2018,2019,0.0257,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Shell,2019,2020,0.0237,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Shell,2020,2021,0.0453,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Shell,2021,2022,0.0084,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Shell,2022,2023,0.0061,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+TotalEnergies,2016,2017,0.0183,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+TotalEnergies,2017,2018,0.0062,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+TotalEnergies,2018,2019,0.0077,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+TotalEnergies,2019,2020,0.0161,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+TotalEnergies,2020,2021,0.0271,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+TotalEnergies,2021,2022,0.0276,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+TotalEnergies,2022,2023,0.0103,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+TotalEnergies,2023,2024,0.0066,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Unilever,2014,2015,0.1828,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Unilever,2015,2016,0.0072,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Unilever,2016,2017,0.0154,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Unilever,2017,2018,0.0079,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Unilever,2018,2019,0.0105,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Unilever,2019,2020,0.0262,True,Pre-CSRD (before 2021),"EU Firms
+Pre-CSRD (before 2021)"
+Unilever,2020,2021,0.029,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Unilever,2021,2022,0.0213,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Unilever,2022,2023,0.0,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"
+Unilever,2023,2024,0.0292,True,Post-CSRD (2021+),"EU Firms
+Post-CSRD (2021+)"

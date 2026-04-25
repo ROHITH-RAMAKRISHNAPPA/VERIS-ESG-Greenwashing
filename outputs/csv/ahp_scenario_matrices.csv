@@ -1,0 +1,6 @@
+scenario,weight_sbert,weight_jaccard,weight_lda,weight_vader,CR,lambda_max
+Balanced,0.4615,0.2308,0.2308,0.0769,-0.0,4.0
+Equal-Weights,0.25,0.25,0.25,0.25,-0.0,4.0
+SBERT-Heavy,0.605,0.1666,0.1666,0.0618,0.0076,4.0206
+LDA-JSD-Heavy,0.2672,0.1542,0.4959,0.0827,0.0038,4.0104
+Jaccard-Heavy,0.2827,0.4899,0.1516,0.0758,0.0038,4.0104

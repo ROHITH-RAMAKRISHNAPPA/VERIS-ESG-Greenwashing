@@ -1,0 +1,13 @@
+firm_name,lag,f_stat,p_value,reject_h0,n_obs,note
+BP,1.0,4.6597,0.0833,False,9,OK
+Chevron,1.0,2.9715,0.1454,False,9,OK
+ConocoPhillips,1.0,0.0,0.9964,False,9,OK
+Eni,1.0,0.2987,0.6082,False,9,OK
+Equinor,1.0,0.5286,0.4998,False,9,OK
+ExxonMobil,,,,False,3,Underpowered: n=3<4
+Glencore,1.0,0.9441,0.3759,False,9,OK
+Repsol,1.0,15.2715,0.0298,True,7,OK
+RioTinto,1.0,1.7179,0.2469,False,9,OK
+Shell,1.0,0.3321,0.5953,False,8,OK
+TotalEnergies,1.0,3.1449,0.1508,False,8,OK
+Unilever,,,,False,0,Underpowered: n=0<4

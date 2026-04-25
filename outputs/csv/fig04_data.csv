@@ -1,0 +1,80 @@
+firm_name,year_from,year_to,veris_score,emissions_delta_pct,greenwashing_quadrant
+BP,2015,2016,0.1319,0.0152,4 - Stagnant
+BP,2016,2017,0.1447,-0.0034,3 - Greenhushing
+BP,2017,2018,0.168,-0.0009,1 - Genuine improvement
+BP,2018,2019,0.1885,0.0024,2 - Greenwashing signal
+BP,2019,2020,0.2011,-0.0514,1 - Genuine improvement
+BP,2021,2022,0.1606,-0.0097,3 - Greenhushing
+BP,2022,2023,0.133,-0.002,3 - Greenhushing
+BP,2023,2024,0.145,-0.027,3 - Greenhushing
+Chevron,2015,2016,0.103,0.0025,4 - Stagnant
+Chevron,2016,2017,0.1344,0.0174,4 - Stagnant
+Chevron,2017,2018,0.1516,0.0227,4 - Stagnant
+Chevron,2018,2019,0.1763,0.0129,2 - Greenwashing signal
+Chevron,2019,2020,0.1988,-0.0725,1 - Genuine improvement
+Chevron,2021,2022,0.1526,0.0777,4 - Stagnant
+Chevron,2022,2023,0.1373,-0.0207,3 - Greenhushing
+Chevron,2023,2024,0.6685,0.0009,2 - Greenwashing signal
+ConocoPhillips,2015,2016,0.1406,0.0058,4 - Stagnant
+ConocoPhillips,2016,2017,0.1517,0.0575,4 - Stagnant
+ConocoPhillips,2017,2018,0.6644,0.0263,2 - Greenwashing signal
+ConocoPhillips,2018,2019,0.3427,0.0048,2 - Greenwashing signal
+ConocoPhillips,2019,2020,0.2451,-0.1111,1 - Genuine improvement
+ConocoPhillips,2021,2022,0.1377,0.0388,4 - Stagnant
+ConocoPhillips,2022,2023,0.2659,0.0718,2 - Greenwashing signal
+ConocoPhillips,2023,2024,0.0786,-0.0041,3 - Greenhushing
+Eni,2015,2016,0.1495,0.0439,4 - Stagnant
+Eni,2016,2017,0.2508,0.0034,2 - Greenwashing signal
+Eni,2017,2018,0.168,-0.0054,1 - Genuine improvement
+Eni,2018,2019,0.1886,0.0177,2 - Greenwashing signal
+Eni,2019,2020,0.1671,-0.0675,1 - Genuine improvement
+Eni,2021,2022,0.1682,0.0068,2 - Greenwashing signal
+Eni,2022,2023,0.1623,-0.0313,3 - Greenhushing
+Eni,2023,2024,0.1469,-0.0763,3 - Greenhushing
+Equinor,2015,2016,0.1699,-0.0062,1 - Genuine improvement
+Equinor,2016,2017,0.1116,0.0041,4 - Stagnant
+Equinor,2017,2018,0.3185,-0.0154,1 - Genuine improvement
+Equinor,2018,2019,0.189,-0.0065,1 - Genuine improvement
+Equinor,2019,2020,0.1246,-0.0373,3 - Greenhushing
+Equinor,2021,2022,0.3095,-0.0476,1 - Genuine improvement
+Equinor,2022,2023,0.1598,-0.1528,3 - Greenhushing
+Equinor,2023,2024,0.1774,-0.0474,1 - Genuine improvement
+ExxonMobil,2017,2018,0.15,0.0116,4 - Stagnant
+ExxonMobil,2022,2023,0.8944,0.0033,2 - Greenwashing signal
+ExxonMobil,2023,2024,0.2352,0.0119,2 - Greenwashing signal
+Glencore,2015,2016,0.1175,0.0051,4 - Stagnant
+Glencore,2016,2017,0.1593,0.0362,4 - Stagnant
+Glencore,2017,2018,0.1875,0.0353,2 - Greenwashing signal
+Glencore,2018,2019,0.1807,0.007,2 - Greenwashing signal
+Glencore,2019,2020,0.1599,-0.0329,3 - Greenhushing
+Glencore,2021,2022,0.2027,-0.0155,1 - Genuine improvement
+Glencore,2022,2023,0.0908,0.0316,4 - Stagnant
+Glencore,2023,2024,0.1929,0.0219,2 - Greenwashing signal
+Repsol,2017,2018,0.127,0.0043,4 - Stagnant
+Repsol,2018,2019,0.1602,-0.0038,3 - Greenhushing
+Repsol,2019,2020,0.2035,-0.0276,1 - Genuine improvement
+Repsol,2021,2022,0.1065,0.0964,4 - Stagnant
+Repsol,2022,2023,0.1445,0.0638,4 - Stagnant
+Repsol,2023,2024,0.1125,-0.0135,3 - Greenhushing
+RioTinto,2015,2016,0.154,0.033,4 - Stagnant
+RioTinto,2016,2017,0.1235,0.0034,4 - Stagnant
+RioTinto,2017,2018,0.2155,0.0313,2 - Greenwashing signal
+RioTinto,2018,2019,0.8434,0.0155,2 - Greenwashing signal
+RioTinto,2019,2020,0.1718,-0.0281,1 - Genuine improvement
+RioTinto,2021,2022,0.1542,0.0196,4 - Stagnant
+RioTinto,2022,2023,0.7018,0.0117,2 - Greenwashing signal
+RioTinto,2023,2024,0.8935,-0.017,1 - Genuine improvement
+Shell,2015,2016,0.1357,-0.0012,3 - Greenhushing
+Shell,2016,2017,0.1958,0.0134,2 - Greenwashing signal
+Shell,2017,2018,0.1923,0.0175,2 - Greenwashing signal
+Shell,2018,2019,0.1624,0.0022,4 - Stagnant
+Shell,2019,2020,0.2069,-0.0471,1 - Genuine improvement
+Shell,2021,2022,0.1316,0.0246,4 - Stagnant
+Shell,2022,2023,0.1102,0.0002,4 - Stagnant
+TotalEnergies,2016,2017,0.1651,0.0143,2 - Greenwashing signal
+TotalEnergies,2017,2018,0.1208,0.0069,4 - Stagnant
+TotalEnergies,2018,2019,0.1475,0.0198,4 - Stagnant
+TotalEnergies,2019,2020,0.1434,-0.0673,3 - Greenhushing
+TotalEnergies,2021,2022,0.2036,0.0256,2 - Greenwashing signal
+TotalEnergies,2022,2023,0.1422,0.0056,4 - Stagnant
+TotalEnergies,2023,2024,0.1282,-0.0261,3 - Greenhushing

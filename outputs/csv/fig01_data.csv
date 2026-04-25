@@ -1,0 +1,13 @@
+firm_name,mean_veris,most_common_quadrant
+ExxonMobil,0.4265333333333334,2 - Greenwashing signal
+RioTinto,0.371,2 - Greenwashing signal
+ConocoPhillips,0.2592,2 - Greenwashing signal
+Unilever,0.25287000000000004,4 - Stagnant
+Chevron,0.21341000000000002,4 - Stagnant
+Eni,0.18316666666666664,2 - Greenwashing signal
+Equinor,0.18112,1 - Genuine improvement
+Shell,0.17436666666666667,4 - Stagnant
+TotalEnergies,0.16290000000000002,4 - Stagnant
+Glencore,0.15802,2 - Greenwashing signal
+BP,0.15511999999999998,3 - Greenhushing
+Repsol,0.1498142857142857,4 - Stagnant

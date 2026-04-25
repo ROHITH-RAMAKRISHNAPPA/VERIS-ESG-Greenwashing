@@ -1,0 +1,2 @@
+logistic_auc,kruskal_H,kruskal_p,mw_q2_q4_p,q2_median_veris,q4_median_veris,sbert_emissions_r,sbert_emissions_p,precsrd_drift,postcsrd_drift,csrd_mw_p,fe_year_controls_beta,fe_year_controls_p,fe_year_controls_r2
+0.8924,58.824,0.0,0.0,0.2036,0.1391,-0.0197,0.8633,0.0145,0.0133,0.9688,-0.1103,0.0875,0.4822

@@ -1,0 +1,111 @@
+firm_name,year,total_co2e_tonnes,data_method,emissions_delta_pct,sector,csrd_period,data_source_label,co2e_mt
+BP,2015,366876188.5068771,country_share_proxy,,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),366.8761885068771
+BP,2016,372445614.5419282,country_share_proxy,0.0152,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),372.4456145419282
+BP,2017,371177109.0237936,country_share_proxy,-0.0034,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),371.1771090237936
+BP,2018,370845411.3527327,country_share_proxy,-0.0009,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),370.8454113527327
+BP,2019,371742625.68592113,country_share_proxy,0.0024,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),371.74262568592115
+BP,2020,352631888.54272765,country_share_proxy,-0.0514,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),352.63188854272767
+BP,2021,91859955.91431704,facility_direct,-0.7395,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),91.85995591431704
+BP,2022,90966568.23318678,facility_direct,-0.0097,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),90.96656823318678
+BP,2023,90786046.98810458,facility_direct,-0.002,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),90.78604698810459
+BP,2024,88330779.45259473,facility_direct,-0.027,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),88.33077945259473
+Chevron,2015,575086881.0687457,country_share_proxy,,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),575.0868810687457
+Chevron,2016,576496474.4442433,country_share_proxy,0.0025,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),576.4964744442433
+Chevron,2017,586505467.1403351,country_share_proxy,0.0174,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),586.5054671403351
+Chevron,2018,599810195.5385149,country_share_proxy,0.0227,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),599.8101955385149
+Chevron,2019,607571630.3200479,country_share_proxy,0.0129,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),607.5716303200478
+Chevron,2020,563537393.4376519,country_share_proxy,-0.0725,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),563.5373934376519
+Chevron,2021,251737023.81819075,facility_direct,-0.5533,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),251.73702381819075
+Chevron,2022,271285522.6300392,facility_direct,0.0777,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),271.2855226300392
+Chevron,2023,265677691.92991865,facility_direct,-0.0207,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),265.67769192991864
+Chevron,2024,265913940.2074126,facility_direct,0.0009,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),265.9139402074126
+ConocoPhillips,2015,134970020.05722195,country_share_proxy,,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),134.97002005722194
+ConocoPhillips,2016,135752499.02062064,country_share_proxy,0.0058,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),135.75249902062063
+ConocoPhillips,2017,143559210.2546273,country_share_proxy,0.0575,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),143.5592102546273
+ConocoPhillips,2018,147341736.64967218,country_share_proxy,0.0263,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),147.34173664967219
+ConocoPhillips,2019,148042111.44890064,country_share_proxy,0.0048,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),148.04211144890064
+ConocoPhillips,2020,131589965.53965276,country_share_proxy,-0.1111,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),131.58996553965275
+ConocoPhillips,2021,625305.0935614139,facility_direct,-0.9952,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),0.625305093561414
+ConocoPhillips,2022,649585.7835338379,facility_direct,0.0388,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),0.6495857835338379
+ConocoPhillips,2023,696218.801018131,facility_direct,0.0718,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),0.6962188010181309
+ConocoPhillips,2024,693372.8893066592,facility_direct,-0.0041,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),0.6933728893066592
+Eni,2015,457547051.9637248,country_share_proxy,,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),457.5470519637248
+Eni,2016,477650307.4754151,country_share_proxy,0.0439,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),477.6503074754151
+Eni,2017,479278050.5986548,country_share_proxy,0.0034,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),479.27805059865483
+Eni,2018,476672277.2120777,country_share_proxy,-0.0054,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),476.6722772120777
+Eni,2019,485094132.3663316,country_share_proxy,0.0177,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),485.09413236633156
+Eni,2020,452371428.277689,country_share_proxy,-0.0675,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),452.371428277689
+Eni,2021,90112637.96352842,facility_direct,-0.8008,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),90.11263796352843
+Eni,2022,90725532.43379092,facility_direct,0.0068,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),90.72553243379092
+Eni,2023,87887806.04016078,facility_direct,-0.0313,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),87.88780604016077
+Eni,2024,81184242.85815097,facility_direct,-0.0763,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),81.18424285815098
+Equinor,2015,151319869.10073373,country_share_proxy,,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),151.31986910073374
+Equinor,2016,150378846.82047808,country_share_proxy,-0.0062,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),150.3788468204781
+Equinor,2017,150992661.94546178,country_share_proxy,0.0041,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),150.99266194546178
+Equinor,2018,148665384.64218184,country_share_proxy,-0.0154,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),148.66538464218183
+Equinor,2019,147695615.7832135,country_share_proxy,-0.0065,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),147.6956157832135
+Equinor,2020,142193739.91005751,country_share_proxy,-0.0373,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),142.1937399100575
+Equinor,2021,10295577.564074775,facility_direct,-0.9276,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),10.295577564074776
+Equinor,2022,9805054.310699722,facility_direct,-0.0476,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),9.805054310699722
+Equinor,2023,8307328.396109106,facility_direct,-0.1528,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),8.307328396109106
+Equinor,2024,7913949.095066108,facility_direct,-0.0474,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),7.9139490950661076
+ExxonMobil,2015,525848492.9490037,country_share_proxy,,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),525.8484929490037
+ExxonMobil,2016,524832117.8855864,country_share_proxy,-0.0019,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),524.8321178855864
+ExxonMobil,2017,530592195.0293436,country_share_proxy,0.011,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),530.5921950293437
+ExxonMobil,2018,536757432.1370572,country_share_proxy,0.0116,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),536.7574321370572
+ExxonMobil,2019,540358943.6458691,country_share_proxy,0.0067,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),540.3589436458691
+ExxonMobil,2020,510168013.2633667,country_share_proxy,-0.0559,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),510.1680132633667
+ExxonMobil,2021,103517563.4197483,facility_direct,-0.7971,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),103.5175634197483
+ExxonMobil,2022,108181259.75886089,facility_direct,0.0451,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),108.18125975886089
+ExxonMobil,2023,108535077.36704664,facility_direct,0.0033,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),108.53507736704664
+ExxonMobil,2024,109829429.34430069,facility_direct,0.0119,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),109.82942934430069
+Glencore,2015,114715656.48303984,country_share_proxy,,Mining,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),114.71565648303984
+Glencore,2016,115300014.97741546,country_share_proxy,0.0051,Mining,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),115.30001497741546
+Glencore,2017,119471670.21603492,country_share_proxy,0.0362,Mining,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),119.47167021603492
+Glencore,2018,123694308.16771182,country_share_proxy,0.0353,Mining,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),123.69430816771182
+Glencore,2019,124566179.58789338,country_share_proxy,0.007,Mining,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),124.56617958789339
+Glencore,2020,120472965.64410657,country_share_proxy,-0.0329,Mining,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),120.47296564410657
+Glencore,2021,131650113.7200912,facility_direct,0.0928,Mining,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),131.65011372009118
+Glencore,2022,129604318.39011994,facility_direct,-0.0155,Mining,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),129.60431839011994
+Glencore,2023,133699331.6277769,facility_direct,0.0316,Mining,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),133.6993316277769
+Glencore,2024,136631133.4356526,facility_direct,0.0219,Mining,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),136.6311334356526
+Repsol,2015,191707089.61222827,country_share_proxy,,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),191.7070896122283
+Repsol,2016,190922733.30318844,country_share_proxy,-0.0041,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),190.92273330318844
+Repsol,2017,193154378.32947505,country_share_proxy,0.0117,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),193.15437832947504
+Repsol,2018,193980234.8027149,country_share_proxy,0.0043,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),193.9802348027149
+Repsol,2019,193235450.6104804,country_share_proxy,-0.0038,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),193.2354506104804
+Repsol,2020,187897919.7124456,country_share_proxy,-0.0276,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),187.8979197124456
+Repsol,2021,97520249.25932091,facility_direct,-0.481,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),97.52024925932092
+Repsol,2022,106922732.42128044,facility_direct,0.0964,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),106.92273242128044
+Repsol,2023,113748077.9542257,facility_direct,0.0638,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),113.7480779542257
+Repsol,2024,112209181.89657898,facility_direct,-0.0135,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),112.20918189657898
+RioTinto,2015,6578585.798935029,country_share_proxy,,Mining,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),6.578585798935029
+RioTinto,2016,6795712.257736926,country_share_proxy,0.033,Mining,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),6.795712257736926
+RioTinto,2017,6818726.678729633,country_share_proxy,0.0034,Mining,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),6.818726678729633
+RioTinto,2018,7032493.501015635,country_share_proxy,0.0313,Mining,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),7.032493501015635
+RioTinto,2019,7141446.554638343,country_share_proxy,0.0155,Mining,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),7.1414465546383425
+RioTinto,2020,6940737.23393058,country_share_proxy,-0.0281,Mining,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),6.94073723393058
+RioTinto,2021,8248293.514090478,facility_direct,0.1884,Mining,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),8.248293514090479
+RioTinto,2022,8409690.175781334,facility_direct,0.0196,Mining,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),8.409690175781334
+RioTinto,2023,8508117.70002437,facility_direct,0.0117,Mining,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),8.50811770002437
+RioTinto,2024,8363281.213811541,facility_direct,-0.017,Mining,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),8.363281213811542
+Shell,2015,490601247.2581393,country_share_proxy,,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),490.6012472581393
+Shell,2016,490033798.38052607,country_share_proxy,-0.0012,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),490.0337983805261
+Shell,2017,496583350.8426354,country_share_proxy,0.0134,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),496.5833508426354
+Shell,2018,505294279.3523369,country_share_proxy,0.0175,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),505.2942793523369
+Shell,2019,506415780.3043512,country_share_proxy,0.0022,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),506.4157803043512
+Shell,2020,482558525.6088171,country_share_proxy,-0.0471,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),482.5585256088171
+Shell,2021,346780115.9018814,facility_direct,-0.2814,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),346.7801159018814
+Shell,2022,355328144.3193273,facility_direct,0.0246,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),355.3281443193273
+Shell,2023,355391876.40775007,facility_direct,0.0002,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),355.3918764077501
+Shell,2024,353012310.3361543,facility_direct,-0.0067,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),353.01231033615426
+TotalEnergies,2015,779964919.2581637,country_share_proxy,,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),779.9649192581637
+TotalEnergies,2016,795050246.8995751,country_share_proxy,0.0193,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),795.0502468995751
+TotalEnergies,2017,806411932.4040816,country_share_proxy,0.0143,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),806.4119324040815
+TotalEnergies,2018,812009341.4081781,country_share_proxy,0.0069,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),812.0093414081781
+TotalEnergies,2019,828124368.4201497,country_share_proxy,0.0198,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),828.1243684201497
+TotalEnergies,2020,772364879.6501313,country_share_proxy,-0.0673,Oil & Gas,Pre-CSRD,Satellite-direct CT v5.4.1 (2021-2024),772.3648796501313
+TotalEnergies,2021,846651077.0476938,facility_direct,0.0962,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),846.6510770476939
+TotalEnergies,2022,868286250.4260249,facility_direct,0.0256,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),868.2862504260249
+TotalEnergies,2023,873168972.3399446,facility_direct,0.0056,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),873.1689723399446
+TotalEnergies,2024,850365703.6316502,facility_direct,-0.0261,Oil & Gas,Post-CSRD,Satellite-direct CT v5.4.1 (2021-2024),850.3657036316503
