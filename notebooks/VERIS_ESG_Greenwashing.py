@@ -1,6 +1,6 @@
 """
-VERIS: Detecting Greenwashing Through Satellite-Verified NLP
-Forensic ESG Audit Dashboard  |  Group 9  |  April 2026
+VERIS -- Forensic ESG Greenwashing Audit Dashboard
+VERIS: Detecting Greenwashing Through Satellite-Verified NLP | Group 9 | April 2026
 
 CSV DATA PROVENANCE (every number traces back to a notebook):
   veris_master.csv        <- notebook 04  (CT mapping + AHP-TOPSIS + VERIS)
@@ -24,7 +24,7 @@ import pathlib, warnings
 warnings.filterwarnings("ignore")
 
 st.set_page_config(
-    page_title="VERIS: Detecting Greenwashing Through Satellite-Verified NLP",
+    page_title="VERIS ESG Audit",
     page_icon="🛰️",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -49,24 +49,60 @@ ALL_FIRMS = sorted(FIRM_COLORS.keys())
 
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-html,body,[class*="css"]{font-family:'Space Grotesk',sans-serif;}
-.kpi-card{background:#0a1f13;border:1px solid #1b4332;border-radius:10px;padding:14px 18px;text-align:center;margin-bottom:4px;}
-.kpi-num{font-family:'JetBrains Mono',monospace;font-size:1.8rem;font-weight:600;color:#52b788;line-height:1.1;}
-.kpi-lbl{font-size:0.68rem;color:#94a3b8;text-transform:uppercase;letter-spacing:.1em;margin-top:3px;}
-.kpi-sub{font-size:0.72rem;color:#4a7c59;margin-top:2px;}
-.info-box{background:#f0faf4;border-left:4px solid #2d6a4f;border-radius:6px;padding:9px 14px;font-size:.83rem;color:#1b4332;margin:6px 0;}
-.find-box{background:#f0fdf4;border-left:4px solid #16a34a;border-radius:6px;padding:9px 14px;font-size:.83rem;color:#14532d;margin:6px 0;}
-.warn-box{background:#fff7ed;border-left:4px solid #ea580c;border-radius:6px;padding:9px 14px;font-size:.83rem;color:#7c2d12;margin:6px 0;}
-.badge{display:inline-block;background:#1b4332;color:#95d5b2;border-radius:20px;padding:2px 11px;font-family:'JetBrains Mono',monospace;font-size:.75rem;margin:2px 3px;}
-.sig-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px 14px;margin:4px 0;}
-.sig-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:#64748b;font-weight:600;}
-.sig-val{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:600;color:#0f172a;}
-.sig-bar-bg{background:#e2e8f0;border-radius:4px;height:6px;margin:4px 0;}
-.sig-explain{font-size:.78rem;color:#475569;margin-top:4px;line-height:1.4;}
-.kw-pill{display:inline-block;background:#d8f3dc;color:#1b4332;border-radius:12px;padding:2px 9px;font-size:.72rem;margin:2px 3px;font-family:'JetBrains Mono',monospace;}
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Scoped custom classes only - no global overrides ── */
+[class*="css"] { font-family: 'Space Grotesk', sans-serif; }
+
+/* KPI cards */
+.kpi-card { background: #061209; border: 1px solid #1b4332; border-radius: 10px; padding: 14px 18px; text-align: center; margin-bottom: 4px; }
+.kpi-num  { font-family: 'JetBrains Mono', monospace; font-size: 1.8rem; font-weight: 600; color: #52b788; line-height: 1.1; }
+.kpi-lbl  { font-size: 0.68rem; color: #74c69d; text-transform: uppercase; letter-spacing: .1em; margin-top: 3px; }
+.kpi-sub  { font-size: 0.72rem; color: #4a7c59; margin-top: 2px; }
+
+/* Info boxes */
+.info-box { background: #f0faf4; border-left: 4px solid #2d6a4f; border-radius: 6px; padding: 9px 14px; font-size: .83rem; color: #1b4332; margin: 6px 0; }
+.find-box { background: #f0fdf4; border-left: 4px solid #16a34a; border-radius: 6px; padding: 9px 14px; font-size: .83rem; color: #14532d; margin: 6px 0; }
+.warn-box { background: #fff7ed; border-left: 4px solid #ea580c; border-radius: 6px; padding: 9px 14px; font-size: .83rem; color: #7c2d12; margin: 6px 0; }
+.badge    { display: inline-block; background: #1b4332; color: #95d5b2; border-radius: 20px; padding: 2px 11px; font-family: 'JetBrains Mono', monospace; font-size: .75rem; margin: 2px 3px; }
+
+/* Signal breakdown cards */
+.sig-card    { background: #f8fafb; border: 1px solid #d1fae5; border-radius: 8px; padding: 10px 14px; margin: 4px 0; }
+.sig-label   { font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: #2d6a4f; font-weight: 600; }
+.sig-val     { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; font-weight: 600; color: #1b4332; }
+.sig-bar-bg  { background: #d1fae5; border-radius: 4px; height: 6px; margin: 4px 0; }
+.sig-explain { font-size: .78rem; color: #374151; margin-top: 4px; line-height: 1.4; }
+.kw-pill     { display: inline-block; background: #ecfdf5; color: #065f46; border-radius: 12px; padding: 2px 9px; font-size: .72rem; margin: 2px 3px; font-family: 'JetBrains Mono', monospace; border: 1px solid #a7f3d0; }
+
+/* Hero header */
+.veris-hero {
+    background: linear-gradient(135deg, #040b07 0%, #061a0e 50%, #0a1f13 100%);
+    border-radius: 16px;
+    padding: 24px 32px;
+    margin-bottom: 20px;
+    border: 1px solid #1b4332;
+    position: relative;
+    overflow: hidden;
+}
+.veris-hero::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(82,183,136,0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+.hero-title  { font-size: 2rem; font-weight: 800; color: #ffffff; letter-spacing: -0.5px; line-height: 1.1; text-shadow: 0 0 30px rgba(82,183,136,0.5); }
+.hero-sub    { font-size: 0.85rem; color: #74c69d; margin-top: 6px; }
+
+/* Firm KPI panel */
+.firm-panel  { background: #f0faf4; border: 1px solid #2d6a4f; color: #1b4332; border-radius: 12px; padding: 18px 22px; }
+.score-big   { font-family: 'JetBrains Mono', monospace; font-size: 2.8rem; font-weight: 700; line-height: 1; }
+.quad-badge  { display: inline-block; padding: 4px 14px; border-radius: 16px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 6px; }
+.verdict-box { background: #ffffff; border: 1px solid #a7f3d0; color: #1f2937; border-radius: 8px; padding: 12px 16px; font-size: 0.85rem; color: #1f2937; line-height: 1.5; margin-top: 10px; }
 </style>
 """, unsafe_allow_html=True)
+
 
 # ── CSV loader ───────────────────────────────────────────────────────────────
 BASE = pathlib.Path(__file__).parent
@@ -161,6 +197,10 @@ if "greenwashing_quadrant" in master.columns:
 # VALID excludes year-pairs that can't be classified (missing CT data or CT discontinuity)
 VALID = master[~master["quadrant_short"].isin(["No Data", "CT Discontinuity"])].copy()
 VALID = VALID.dropna(subset=["veris_score", "emissions_delta_pct"])
+
+# Add percentile columns to master for detail panel lookups
+master["veris_pct"]     = master["veris_score"].rank(pct=True) * 100
+master["emissions_pct"] = master["emissions_delta_pct"].rank(pct=True).fillna(50) * 100
 
 # Also compute headline counts once for reuse across tabs
 _N_TOTAL        = len(master)
@@ -329,27 +369,289 @@ def signal_explain(row, lda_kw_df=pd.DataFrame()):
 """
     return html
 
+# ── Pure CSS animated background ────────────────────────────────────────────
+st.markdown("""
+<style>
+/* Particle container */
+.veris-particles { position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;overflow:hidden; }
 
+/* Each particle floats upward and fades - visible in both themes */
+.vp {
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+  animation: vpFloat linear infinite;
+  filter: drop-shadow(0 0 3px currentColor);
+}
+@keyframes vpFloat {
+  0%   { transform:translateY(0)   scale(1);   opacity:0.55; }
+  40%  { transform:translateY(-25vh) scale(1.2); opacity:0.75; }
+  80%  { transform:translateY(-55vh) scale(0.9); opacity:0.35; }
+  100% { transform:translateY(-80vh) scale(0.7); opacity:0; }
+}
+/* Light mode: use darker greens for visibility */
+@media (prefers-color-scheme: light) {
+  .vp { filter: drop-shadow(0 0 2px #1b4332); }
+}
 
-# ── KPI row ───────────────────────────────────────────────────────────────────
+/* Satellite sweeps diagonally */
+.sat-dot {
+  position:fixed;
+  width:7px; height:7px;
+  border-radius:50%;
+  background:#1b4332;
+  box-shadow:0 0 10px #52b788, 0 0 24px #2d6a4f, 0 0 4px #1b4332;
+  pointer-events:none;
+  top:8vh; left:-10px;
+  z-index:0;
+  animation: satMove 18s linear infinite;
+}
+@keyframes satMove {
+  0%   { transform:translate(0,0);        opacity:0; }
+  5%   { opacity:0.9; }
+  90%  { opacity:0.7; }
+  100% { transform:translate(110vw, 45vh); opacity:0; }
+}
+
+/* Satellite trail using box-shadow on a ::before */
+.sat-dot::before {
+  content:'';
+  position:absolute;
+  top:50%; left:50%;
+  width:40px; height:2px;
+  background:linear-gradient(to left, rgba(82,183,136,0.7), transparent);
+  transform:translateY(-50%) translateX(-100%);
+  border-radius:2px;
+}
+</style>
+<div class="veris-particles">
+<div class="vp vp0" style="left:81vw;top:14vh;width:2.1px;height:2.1px;background:#52b788;opacity:0.56;animation-duration:11.3s;animation-delay:-3.3s;"></div>
+<div class="vp vp1" style="left:11vw;top:75vh;width:3.3px;height:3.3px;background:#2d6a4f;opacity:0.32;animation-duration:8.4s;animation-delay:-3.3s;"></div>
+<div class="vp vp2" style="left:83vw;top:89vh;width:3.6px;height:3.6px;background:#95d5b2;opacity:0.53;animation-duration:10.6s;animation-delay:-8.8s;"></div>
+<div class="vp vp3" style="left:89vw;top:54vh;width:3.0px;height:3.0px;background:#40916c;opacity:0.28;animation-duration:9.9s;animation-delay:-14.4s;"></div>
+<div class="vp vp4" style="left:44vw;top:77vh;width:2.8px;height:2.8px;background:#74c69d;opacity:0.28;animation-duration:8.5s;animation-delay:-6.9s;"></div>
+<div class="vp vp5" style="left:37vw;top:80vh;width:3.9px;height:3.9px;background:#52b788;opacity:0.33;animation-duration:18.3s;animation-delay:-8.7s;"></div>
+<div class="vp vp6" style="left:37vw;top:10vh;width:4.6px;height:4.6px;background:#2d6a4f;opacity:0.31;animation-duration:18.4s;animation-delay:-5.7s;"></div>
+<div class="vp vp7" style="left:45vw;top:26vh;width:4.0px;height:4.0px;background:#95d5b2;opacity:0.44;animation-duration:16.4s;animation-delay:-10.3s;"></div>
+<div class="vp vp8" style="left:31vw;top:20vh;width:3.4px;height:3.4px;background:#40916c;opacity:0.36;animation-duration:11.2s;animation-delay:-13.9s;"></div>
+<div class="vp vp9" style="left:98vw;top:99vh;width:2.2px;height:2.2px;background:#74c69d;opacity:0.57;animation-duration:17.9s;animation-delay:-12.1s;"></div>
+<div class="vp vp10" style="left:72vw;top:91vh;width:2.9px;height:2.9px;background:#52b788;opacity:0.34;animation-duration:15.9s;animation-delay:-5.9s;"></div>
+<div class="vp vp11" style="left:31vw;top:95vh;width:3.7px;height:3.7px;background:#2d6a4f;opacity:0.33;animation-duration:11.2s;animation-delay:-8.8s;"></div>
+<div class="vp vp12" style="left:17vw;top:65vh;width:3.5px;height:3.5px;background:#95d5b2;opacity:0.49;animation-duration:17.1s;animation-delay:-12.9s;"></div>
+<div class="vp vp13" style="left:76vw;top:8vh;width:3.2px;height:3.2px;background:#40916c;opacity:0.58;animation-duration:15.2s;animation-delay:-7.0s;"></div>
+<div class="vp vp14" style="left:87vw;top:92vh;width:2.3px;height:2.3px;background:#74c69d;opacity:0.35;animation-duration:18.6s;animation-delay:-11.3s;"></div>
+<div class="vp vp15" style="left:20vw;top:58vh;width:2.0px;height:2.0px;background:#52b788;opacity:0.43;animation-duration:16.7s;animation-delay:-10.8s;"></div>
+<div class="vp vp16" style="left:13vw;top:80vh;width:2.9px;height:2.9px;background:#2d6a4f;opacity:0.44;animation-duration:15.7s;animation-delay:-9.1s;"></div>
+<div class="vp vp17" style="left:99vw;top:67vh;width:4.8px;height:4.8px;background:#95d5b2;opacity:0.59;animation-duration:15.2s;animation-delay:-7.3s;"></div>
+<div class="vp vp18" style="left:39vw;top:30vh;width:2.2px;height:2.2px;background:#40916c;opacity:0.27;animation-duration:18.5s;animation-delay:-14.2s;"></div>
+<div class="vp vp19" style="left:97vw;top:68vh;width:4.3px;height:4.3px;background:#74c69d;opacity:0.56;animation-duration:9.5s;animation-delay:-7.1s;"></div>
+<div class="vp vp20" style="left:54vw;top:27vh;width:4.8px;height:4.8px;background:#52b788;opacity:0.49;animation-duration:17.1s;animation-delay:-10.3s;"></div>
+<div class="vp vp21" style="left:47vw;top:56vh;width:4.7px;height:4.7px;background:#2d6a4f;opacity:0.44;animation-duration:13.4s;animation-delay:-3.7s;"></div>
+<div class="vp vp22" style="left:75vw;top:28vh;width:2.0px;height:2.0px;background:#95d5b2;opacity:0.37;animation-duration:16.5s;animation-delay:-0.9s;"></div>
+<div class="vp vp23" style="left:65vw;top:30vh;width:2.8px;height:2.8px;background:#40916c;opacity:0.45;animation-duration:13.8s;animation-delay:-8.1s;"></div>
+<div class="vp vp24" style="left:31vw;top:100vh;width:3.4px;height:3.4px;background:#74c69d;opacity:0.39;animation-duration:12.9s;animation-delay:-1.4s;"></div>
+<div class="vp vp25" style="left:93vw;top:6vh;width:4.0px;height:4.0px;background:#52b788;opacity:0.55;animation-duration:19.8s;animation-delay:-1.5s;"></div>
+<div class="vp vp26" style="left:31vw;top:24vh;width:2.6px;height:2.6px;background:#2d6a4f;opacity:0.57;animation-duration:13.4s;animation-delay:-6.3s;"></div>
+<div class="vp vp27" style="left:56vw;top:70vh;width:2.3px;height:2.3px;background:#95d5b2;opacity:0.51;animation-duration:15.8s;animation-delay:-8.1s;"></div>
+<div class="vp vp28" style="left:30vw;top:21vh;width:3.2px;height:3.2px;background:#40916c;opacity:0.25;animation-duration:13.8s;animation-delay:-13.0s;"></div>
+<div class="vp vp29" style="left:49vw;top:33vh;width:4.8px;height:4.8px;background:#74c69d;opacity:0.52;animation-duration:17.4s;animation-delay:-4.3s;"></div>
+<div class="vp vp30" style="left:84vw;top:91vh;width:3.5px;height:3.5px;background:#52b788;opacity:0.27;animation-duration:10.3s;animation-delay:-3.3s;"></div>
+<div class="vp vp31" style="left:40vw;top:7vh;width:2.2px;height:2.2px;background:#2d6a4f;opacity:0.43;animation-duration:13.7s;animation-delay:-13.8s;"></div>
+<div class="vp vp32" style="left:23vw;top:8vh;width:3.8px;height:3.8px;background:#95d5b2;opacity:0.34;animation-duration:16.1s;animation-delay:-3.5s;"></div>
+<div class="vp vp33" style="left:76vw;top:5vh;width:3.9px;height:3.9px;background:#40916c;opacity:0.32;animation-duration:13.0s;animation-delay:-8.8s;"></div>
+<div class="vp vp34" style="left:91vw;top:40vh;width:2.7px;height:2.7px;background:#74c69d;opacity:0.51;animation-duration:12.7s;animation-delay:-10.1s;"></div>
+<div class="vp vp35" style="left:9vw;top:1vh;width:3.4px;height:3.4px;background:#52b788;opacity:0.34;animation-duration:20.0s;animation-delay:-14.9s;"></div>
+<div class="vp vp36" style="left:44vw;top:8vh;width:4.6px;height:4.6px;background:#2d6a4f;opacity:0.46;animation-duration:12.4s;animation-delay:-2.4s;"></div>
+<div class="vp vp37" style="left:83vw;top:67vh;width:2.0px;height:2.0px;background:#95d5b2;opacity:0.30;animation-duration:17.8s;animation-delay:-4.5s;"></div>
+<div class="vp vp38" style="left:14vw;top:13vh;width:4.2px;height:4.2px;background:#40916c;opacity:0.49;animation-duration:9.9s;animation-delay:-4.2s;"></div>
+<div class="vp vp39" style="left:33vw;top:64vh;width:3.5px;height:3.5px;background:#74c69d;opacity:0.35;animation-duration:18.9s;animation-delay:-12.7s;"></div>
+<div class="sat-dot"></div>
+</div>
+""", unsafe_allow_html=True)
+
+# ── Title ────────────────────────────────────────────────────────────────────
+st.markdown("""
+<div style="padding:18px 0 8px 0;">
+  <div style="font-size:1.9rem;font-weight:800;color:#1b4332;letter-spacing:-0.5px;line-height:1.1;">
+    🛰️ VERIS: Detecting Greenwashing Through Satellite-Verified NLP
+  </div>
+</div>
+""", unsafe_allow_html=True)
+
+# ── Corpus stats ─────────────────────────────────────────────────────────────
 n_q2 = (VALID["quadrant_short"]=="Q2 Greenwashing").sum()
 n_q3 = (VALID["quadrant_short"]=="Q3 Greenhushing").sum()
 n_q1 = (VALID["quadrant_short"]=="Q1 Genuine").sum()
-lr_auc = float(validation["logistic_auc"].iloc[0]) if not validation.empty and "logistic_auc" in validation.columns else 0.878
+lr_auc = float(validation["logistic_auc"].iloc[0]) if not validation.empty and "logistic_auc" in validation.columns else 0.8924
 
 k = st.columns(6)
 for col,(num,lbl,sub) in zip(k,[
     (str(n_q2),"Greenwashing pairs","High VERIS + rising emissions"),
     (str(n_q3),"Greenhushing pairs","Falling emissions, static language"),
     (str(n_q1),"Genuine improvement","High VERIS + falling emissions"),
-    (f"{_veris_med:.3f}","VERIS median","Corpus-relative threshold"),
-    (f"{lr_auc:.3f}","Logistic AUC","Q2 classification accuracy"),
-    ("θ=+0.150","DoubleML CSRD 2021","p=0.005 · post-CSRD VERIS higher"),
+    (f"{_veris_med:.3f}","VERIS median","Corpus threshold = 0.162"),
+    (f"{lr_auc:.4f}","Within-corpus AUC","Q2 vs Q4 discriminant"),
+    ("θ=+0.005","DoubleML CSRD","p=0.61, n=79, corrected"),
 ]):
     with col:
-        st.markdown(f'<div class="kpi-card"><div class="kpi-num">{num}</div>'
-                    f'<div class="kpi-lbl">{lbl}</div><div class="kpi-sub">{sub}</div></div>',
+        st.markdown(f'''<div class="kpi-card"><div class="kpi-num">{num}</div>'''
+                    f'''<div class="kpi-lbl">{lbl}</div><div class="kpi-sub">{sub}</div></div>''',
                     unsafe_allow_html=True)
+
+st.markdown("<br>", unsafe_allow_html=True)
+
+# ── MAIN GREENWASHING MATRIX + CLICK KPI PANEL ───────────────────────────────
+st.markdown("""<div class="info-box">
+Every dot is one firm in one year-pair. The horizontal axis is how much the firm's <b>disclosure language</b> changed (VERIS).
+The vertical axis is how much their <b>actual emissions</b> changed (satellite-verified).
+<b>Top-right (Q2) = language changed while emissions didn't — that's the greenwashing signal.</b>
+Click any dot to see the VERIS percentile, satellite CO₂e percentile, and full verdict.
+</div>""", unsafe_allow_html=True)
+
+# Filters
+_mf1, _mf2, _mf3 = st.columns([3, 2, 2])
+with _mf1:
+    _filt_firms = st.multiselect("Filter to specific firms", ALL_FIRMS, default=ALL_FIRMS, key="hero_firms")
+with _mf2:
+    _yr_min, _yr_max = int(VALID["year_to"].min()), int(VALID["year_to"].max())
+    _yr_range = st.slider("Year range", _yr_min, _yr_max, (_yr_min, _yr_max), key="hero_yr")
+
+# Build filtered dataset
+_mat = VALID.copy()
+if _filt_firms:
+    _mat = _mat[_mat["firm_name"].isin(_filt_firms)]
+_mat = _mat[_mat["year_to"].between(*_yr_range)].copy()
+
+# Percentile columns for KPI panel lookup
+if "veris_pct"     not in master.columns:
+    master["veris_pct"]     = master["veris_score"].rank(pct=True) * 100
+if "emissions_pct" not in master.columns:
+    master["emissions_pct"] = master["emissions_delta_pct"].rank(pct=True).fillna(50) * 100
+
+# Original semantic quad colours (red=bad, green=good, clear to read)
+_MCOLORS = {
+    "Q2 Greenwashing": "#c1121f",
+    "Q1 Genuine":      "#1a7340",
+    "Q3 Greenhushing": "#e07b00",
+    "Q4 Stagnant":     "#6b7280",
+}
+
+_matrix_col, _kpi_col = st.columns([3, 2])
+with _matrix_col:
+    if _mat.empty:
+        st.warning("No data for current filter combination.")
+    else:
+        _mat["sz"] = (_mat["year_to"] - 2014) * 3 + 8
+        _mat["emissions_delta_pct_display"] = _mat["emissions_delta_pct"] * 100
+        _mat["hover_label"] = (
+            _mat["firm_name"].astype(str) + " " +
+            _mat["year_from"].astype("Int64").astype(str) + "→" +
+            _mat["year_to"].astype("Int64").astype(str)
+        )
+        import plotly.express as _px2
+        _fig_m = _px2.scatter(
+            _mat, x="veris_score", y="emissions_delta_pct_display",
+            color="quadrant_short", color_discrete_map=_MCOLORS,
+            size="sz", size_max=18,
+            hover_name="hover_label",
+            hover_data={"veris_score":":.3f", "emissions_delta_pct_display":":.2f",
+                        "quadrant_short":True, "sz":False},
+            labels={"veris_score":"Disclosure Language Change (VERIS)",
+                    "emissions_delta_pct_display":"Satellite-Verified Emissions Change (%)",
+                    "quadrant_short":"Quadrant"},
+            height=500,
+            custom_data=["firm_name", "year_to"],
+        )
+        _fig_m.add_vline(x=_veris_med, line_dash="dash", line_color="#94a3b8",
+                         annotation_text=f"Median VERIS = {_veris_med:.3f}",
+                         annotation_position="top left")
+        _fig_m.add_hline(y=0, line_dash="dot", line_color="#94a3b8")
+        for _qt, _qx, _qy, _qc in [
+            ("Q2 GREENWASHING",    0.72,   4,  "#c1121f"),
+            ("Q1 GENUINE PROGRESS",0.72, -10,  "#1a7340"),
+            ("Q4 STAGNANT",        0.10,   4,  "#6b7280"),
+            ("Q3 GREENHUSHING",    0.10, -10,  "#e07b00"),
+        ]:
+            _fig_m.add_annotation(x=_qx, y=_qy, text=f"<b>{_qt}</b>",
+                                   showarrow=False, font=dict(color=_qc, size=11), opacity=0.5)
+        _fig_m.update_layout(
+            plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
+            font_family="Space Grotesk",
+            margin=dict(l=60, r=20, t=40, b=60),
+            legend=dict(orientation="h", y=1.04, x=0, title_text=""),
+            hoverlabel=dict(font_size=12),
+            clickmode="event+select",
+        )
+        _fig_m.update_xaxes(gridcolor="rgba(128,128,128,0.15)")
+        _fig_m.update_yaxes(gridcolor="rgba(128,128,128,0.15)")
+
+        _m_event = st.plotly_chart(_fig_m, use_container_width=True,
+                                    on_select="rerun", key="main_matrix")
+
+with _kpi_col:
+    _sel_pts = (_m_event.get("selection", {}) or {}).get("points", []) if _m_event else []
+    if _sel_pts:
+        _pt     = _sel_pts[0]
+        _pt_cd  = _pt.get("customdata", [None, None])
+        _pt_firm = _pt_cd[0] if _pt_cd else None
+        _pt_year = _pt_cd[1] if len(_pt_cd) > 1 else None
+        if _pt_firm and _pt_year:
+            _det = master[(master["firm_name"]==_pt_firm) & (master["year_to"]==int(_pt_year))]
+            if not _det.empty:
+                _dr    = _det.iloc[0]
+                _dvs   = float(_dr.get("veris_score", 0))
+                _deq   = float(_dr.get("emissions_delta_pct", 0)) if pd.notna(_dr.get("emissions_delta_pct")) else None
+                _dvpct = float(_dr.get("veris_pct", 0))
+                _depct = float(_dr.get("emissions_pct", 50))
+                _dquad = str(_dr.get("quadrant_short", ""))
+                _dyf   = int(_dr.get("year_from", int(_pt_year)-1))
+                _dsb   = float(_dr.get("sbert_drift", 0))
+                _djac  = float(_dr.get("jaccard_overlap", 0))
+                _dfog  = float(_dr.get("gunning_fog_index", 0))
+                _dobf  = int(_dr.get("obfuscation_flag", 0))
+
+                _qbg  = {"Q2 Greenwashing":"#fef2f2","Q1 Genuine":"#f0fdf4",
+                         "Q3 Greenhushing":"#fffbeb","Q4 Stagnant":"#f8fafc"}.get(_dquad,"#f8fafc")
+                _qcol = {"Q2 Greenwashing":"#c1121f","Q1 Genuine":"#1a7340",
+                         "Q3 Greenhushing":"#d97706","Q4 Stagnant":"#4b5563"}.get(_dquad,"#4b5563")
+                _verdicts = {
+                    "Q2 Greenwashing": f"Narrative shifted significantly while satellite emissions rose {abs(_deq or 0):.2f}%. Language changed but operations did not.",
+                    "Q1 Genuine":      f"Language change matched by a verified {abs(_deq or 0):.2f}% emissions reduction. Real progress, real reporting.",
+                    "Q3 Greenhushing": f"Emissions fell {abs(_deq or 0):.2f}% but report language stayed static. Real improvement is going uncommunicated.",
+                    "Q4 Stagnant":     f"Neither language nor emissions changed materially. No movement in either channel.",
+                }
+
+                st.markdown(f"""<div class="firm-panel">
+<div style="font-size:1.3rem;font-weight:800;color:#1b4332 !important;">{_pt_firm} {_dyf}–{int(_pt_year)}</div>
+<span class="quad-badge" style="background:{_qbg};color:{_qcol};border:1px solid {_qcol}40;margin-bottom:12px;">{_dquad}</span>
+<div style="display:flex;gap:12px;margin:12px 0;">
+  <div style="flex:1;background:{_qbg};border-radius:8px;padding:12px;text-align:center;border:1px solid {_qcol}30;">
+    <div style="font-size:.65rem;color:#4a7c59;text-transform:uppercase;letter-spacing:.08em;">VERIS Percentile</div>
+    <div class="score-big" style="color:{_qcol};">{_dvpct:.0f}<span style="font-size:1.2rem;">th</span></div>
+    <div style="font-size:.72rem;color:#6b7280;">raw score: {_dvs:.4f}</div>
+  </div>
+  <div style="flex:1;background:{_qbg};border-radius:8px;padding:12px;text-align:center;border:1px solid {_qcol}30;">
+    <div style="font-size:.65rem;color:#4a7c59;text-transform:uppercase;letter-spacing:.08em;">Emissions Percentile</div>
+    <div class="score-big" style="color:{'#c1121f' if (_deq or 0)>0 else '#1a7340'};">{_depct:.0f}<span style="font-size:1.2rem;">th</span></div>
+    <div style="font-size:.72rem;color:#6b7280;">raw: {f"{_deq:+.2f}%" if _deq is not None else "n/a"}</div>
+  </div>
+</div>
+<div class="verdict-box">{_verdicts.get(_dquad, "")}</div>
+<div style="margin-top:10px;font-size:.8rem;color:#374151 !important;">
+  <b>SBERT drift:</b> {_dsb:.4f} &nbsp;|&nbsp; <b>Jaccard:</b> {_djac:.0%} &nbsp;|&nbsp; <b>Fog:</b> {_dfog:.1f}<br>
+  {"⚠️ <b>Obfuscation flag raised</b>" if _dobf else "✅ No obfuscation flag"}
+</div>
+</div>""", unsafe_allow_html=True)
+    else:
+        st.markdown("""<div class="firm-panel" style="text-align:center;padding:40px 20px;">
+  <div style="font-size:2.5rem;margin-bottom:10px;">👆</div>
+  <div style="font-weight:700;color:#1b4332;font-size:1.05rem;">Click any bubble</div>
+  <div style="font-size:.85rem;color:#4a7c59;margin-top:8px;line-height:1.5;">
+    Select a firm-year on the matrix to see its<br>
+    VERIS percentile, satellite CO₂e percentile,<br>
+    quadrant verdict, and signal flags.
+  </div>
+</div>""", unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
@@ -387,7 +689,6 @@ st.markdown("<br>", unsafe_allow_html=True)
 if IS_TECH:
     # ── Tabs (Technical Mode: 10 analytical lenses) ──────────────────────────
     tabs = st.tabs([
-        "🎯 Matrix",
         "📡 Emissions",
         "🔬 Forensics",
         "📐 Causal",
@@ -400,124 +701,9 @@ if IS_TECH:
     ])
     
     # ────────────────────────────────────────────────────────────────────────────
-    # TAB 1: 2x2 GREENWASHING MATRIX  +  firm filter  +  signal explainer
-    # ────────────────────────────────────────────────────────────────────────────
-    with tabs[0]:
-        st.markdown("""<div class="info-box">
-        Each dot = one firm in one year-pair.
-        <b>X-axis</b> = VERIS score (disclosure language change).
-        <b>Y-axis</b> = satellite-verified % emissions change.
-        Top-right (Q2) = language changed while emissions rose or stayed flat = <b>greenwashing signal</b>.
-        Click any dot to see a full signal breakdown explaining <i>why</i> that score was assigned.
-        </div>""", unsafe_allow_html=True)
-    
-        # Filters row  -  now includes firm filter
-        f1a, f1b, f1c, f1d = st.columns([2, 2, 2, 2])
-        with f1a:
-            sel_firms = st.multiselect("Firm / Company", ALL_FIRMS,
-                                        default=ALL_FIRMS, key="m_firm")
-        with f1b:
-            sel_sec = st.multiselect("Sector",
-                                      sorted(VALID["sector"].dropna().unique()),
-                                      default=sorted(VALID["sector"].dropna().unique()), key="m_sec")
-        with f1c:
-            sel_eu = st.multiselect("EU / Non-EU", ["EU","Non-EU"],
-                                     default=["EU","Non-EU"], key="m_eu")
-        with f1d:
-            yr_min, yr_max = int(VALID["year_to"].min()), int(VALID["year_to"].max())
-            sel_yr = st.slider("Year range", yr_min, yr_max, (yr_min, yr_max), key="m_yr")
-    
-        mat = VALID.copy()
-        if sel_firms: mat = mat[mat["firm_name"].isin(sel_firms)]
-        if sel_sec:   mat = mat[mat["sector"].isin(sel_sec)]
-        if sel_eu:    mat = mat[mat["eu_flag"].isin(sel_eu)]
-        mat = mat[mat["year_to"].between(*sel_yr)]
-        mat = mat.copy()  # ensure clean frame after filters
-        mat["sz"] = (mat["year_to"] - 2014) * 3 + 8
-        # Vectorized hover_label construction  -  safe on empty frames, no apply(axis=1) ambiguity
-        if not mat.empty:
-            mat["hover_label"] = (mat["firm_name"].astype(str) + " " +
-                                   mat["year_from"].astype("Int64").astype(str) + "→" +
-                                   mat["year_to"].astype("Int64").astype(str))
-            # Scale decimal fraction to percentage for readable y-axis
-            mat["emissions_delta_pct_display"] = mat["emissions_delta_pct"] * 100
-        else:
-            mat["hover_label"] = pd.Series(dtype=str)
-            mat["emissions_delta_pct_display"] = pd.Series(dtype=float)
-
-        if mat.empty:
-            st.warning("No data for current filter combination. Reset filters to see the matrix.")
-        else:
-            fig = px.scatter(mat, x="veris_score", y="emissions_delta_pct_display",
-                             color="quadrant_short", color_discrete_map=QUAD_COLORS,
-                             size="sz", size_max=20,
-                             hover_name="hover_label",
-                             hover_data={"veris_score":":.3f","emissions_delta_pct_display":":.2f",
-                                         "quadrant_short":True,"sz":False},
-                             labels={"veris_score":"VERIS Score",
-                                     "emissions_delta_pct_display":"Emissions Change % (satellite)",
-                                     "quadrant_short":"Quadrant"},
-                             height=500)
-            fig.add_vline(x=_veris_med, line_dash="dash", line_color="#94a3b8",
-                          annotation_text=f"Median {_veris_med:.3f}", annotation_position="top left")
-            fig.add_hline(y=0, line_dash="dot", line_color="#94a3b8")
-            for txt,x,y,c in [("Q2 Greenwashing",0.72,4,"#c1121f"),("Q1 Genuine",0.72,-9,"#1a7340"),
-                               ("Q4 Stagnant",0.12,4,"#6b7280"),("Q3 Greenhushing",0.12,-9,"#e07b00")]:
-                fig.add_annotation(x=x,y=y,text=f"<b>{txt}</b>",showarrow=False,
-                                   font=dict(color=c,size=11),opacity=0.45)
-            fig.update_layout(plot_bgcolor="#fafafa",paper_bgcolor="white",
-                              font_family="Space Grotesk",margin=dict(l=50,r=20,t=30,b=50),
-                              legend=dict(orientation="h",yanchor="bottom",y=1.01,x=0))
-            st.plotly_chart(fig, use_container_width=True)
-    
-        # Signal explainer -- select a dot to understand its score
-        st.markdown("---")
-        st.markdown("##### 🔍 Signal Breakdown  -  What drove this score?")
-        st.caption("Select a firm and year-pair to see a full explanation of every signal that contributed to the VERIS score.")
-    
-        ex1, ex2 = st.columns([1, 1])
-        with ex1:
-            sel_ex_firm = st.selectbox("Firm", ALL_FIRMS, key="ex_firm")
-        with ex2:
-            firm_pairs = master[master["firm_name"]==sel_ex_firm].dropna(subset=["veris_score"])
-            pair_labels = [f"{int(r.year_from)}→{int(r.year_to)}" for _,r in firm_pairs.iterrows()]
-            sel_ex_pair = st.selectbox("Year pair", pair_labels, key="ex_pair")
-    
-        if sel_ex_pair:
-            y_from, y_to = int(sel_ex_pair.split("→")[0]), int(sel_ex_pair.split("→")[1])
-            ex_row = master[(master["firm_name"]==sel_ex_firm) &
-                            (master["year_from"]==y_from) &
-                            (master["year_to"]==y_to)]
-            if not ex_row.empty:
-                r = ex_row.iloc[0]
-                quad = r.get("greenwashing_quadrant"," - ")
-                quad_color = {"2 - Greenwashing signal":"#c1121f",
-                              "1 - Genuine improvement":"#1a7340",
-                              "3 - Greenhushing":"#e07b00",
-                              "4 - Stagnant":"#6b7280"}.get(quad,"#475569")
-                st.markdown(
-                    f'<div style="margin:8px 0;padding:8px 14px;background:#f8fafc;border-radius:8px;">'
-                    f'<b>{sel_ex_firm} {sel_ex_pair}</b> &nbsp;·&nbsp; '
-                    f'<span style="color:{quad_color};font-weight:600;">{quad}</span></div>',
-                    unsafe_allow_html=True)
-                st.markdown(signal_explain(r.to_dict(), lda_kw), unsafe_allow_html=True)
-    
-        c1, c2 = st.columns(2)
-        with c1:
-            st.markdown(f"""<div class="find-box">
-            <b>{(mat['quadrant_short']=='Q2 Greenwashing').sum()} Q2 Greenwashing pairs</b> in current filter.
-            Language restructured while satellite-verified emissions stayed flat or rose.
-            </div>""", unsafe_allow_html=True)
-        with c2:
-            st.markdown(f"""<div class="find-box">
-            <b>{(mat['quadrant_short']=='Q3 Greenhushing').sum()} Q3 Greenhushing pairs</b> in current filter.
-            Emissions fell but language barely changed  -  genuine progress under-reported.
-            </div>""", unsafe_allow_html=True)
-    
-    # ────────────────────────────────────────────────────────────────────────────
     # TAB 2: SATELLITE EMISSIONS
     # ────────────────────────────────────────────────────────────────────────────
-    with tabs[1]:
+    with tabs[0]:
         st.markdown("""<div class="info-box">
         <b>Ground truth:</b> Satellite-verified facility-level CO2e from Climate TRACE v5.4.1.
         Dotted lines = country-share proxy (2015-2020). Solid = satellite-direct (2021-2024).
@@ -552,7 +738,7 @@ if IS_TECH:
         fig_em.add_vline(x=2021,line_dash="dash",line_color="#ea580c",line_width=2,
                          annotation_text="CSRD 2021",annotation_position="top")
         fig_em.add_vrect(x0=2015,x1=2020.5,fillcolor="#f1f5f9",opacity=0.4,layer="below",line_width=0)
-        fig_em.update_layout(height=460,plot_bgcolor="#fafafa",paper_bgcolor="white",
+        fig_em.update_layout(height=460,plot_bgcolor="rgba(0,0,0,0)",paper_bgcolor="rgba(0,0,0,0)",
                              font_family="Space Grotesk",xaxis_title="Year",yaxis_title="Mt CO2e",
                              margin=dict(l=50,r=20,t=30,b=50),
                              legend=dict(orientation="h",yanchor="bottom",y=1.01))
@@ -566,7 +752,7 @@ if IS_TECH:
     # ────────────────────────────────────────────────────────────────────────────
     # TAB 3: SIGNAL FORENSICS
     # ────────────────────────────────────────────────────────────────────────────
-    with tabs[2]:
+    with tabs[1]:
         st.markdown("""<div class="info-box">
         The four NLP signals that compose VERIS, examined independently.
         Jaccard heatmap reveals verbatim copy-paste rates. Correlation matrix confirms each
@@ -586,7 +772,7 @@ if IS_TECH:
                 piv = piv[[c for c in sorted(piv.columns,key=lambda s: int(s.split("-")[0])) if c in piv.columns]]
                 fig_j = px.imshow(piv,color_continuous_scale="Blues",zmin=0.2,zmax=0.8,
                                   text_auto=".2f",aspect="auto",height=320,labels=dict(color="Jaccard"))
-                fig_j.update_layout(font_family="Space Grotesk",paper_bgcolor="white",
+                fig_j.update_layout(font_family="Space Grotesk",paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
                                      margin=dict(l=10,r=10,t=10,b=40))
                 fig_j.update_xaxes(tickangle=45)
                 st.plotly_chart(fig_j,use_container_width=True)
@@ -605,7 +791,7 @@ if IS_TECH:
                 cm[mask] = None
                 fig_c = px.imshow(cm,color_continuous_scale="RdYlGn",zmin=-1,zmax=1,
                                   text_auto=".2f",aspect="auto",height=320)
-                fig_c.update_layout(font_family="Space Grotesk",paper_bgcolor="white",
+                fig_c.update_layout(font_family="Space Grotesk",paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
                                      margin=dict(l=10,r=10,t=10,b=10))
                 st.plotly_chart(fig_c,use_container_width=True)
     
@@ -621,13 +807,14 @@ if IS_TECH:
                 sm = sa.melt(id_vars="firm_name",var_name="Signal",value_name="Score")
                 sm["Signal"] = sm["Signal"].map(avail_sig)
                 fig_s = px.bar(sm,x="firm_name",y="Score",color="Signal",barmode="group",
-                               color_discrete_sequence=["#1a7340","#0ea5e9","#f59e0b","#ef4444"],
-                               height=300)
-                fig_s.update_layout(plot_bgcolor="#fafafa",paper_bgcolor="white",
+                               color_discrete_sequence=["#1b4332","#2d6a4f","#52b788","#95d5b2"],
+                               height=340)
+                fig_s.update_layout(plot_bgcolor="rgba(0,0,0,0)",paper_bgcolor="rgba(0,0,0,0)",
                                       font_family="Space Grotesk",
-                                      legend=dict(orientation="h",y=1.05),
-                                      margin=dict(l=10,r=10,t=40,b=60))
-                fig_s.update_xaxes(tickangle=45)
+                                      legend=dict(orientation="h",y=1.08,title_text=""),
+                                      margin=dict(l=10,r=10,t=50,b=100),
+                                      xaxis_title="")
+                fig_s.update_xaxes(tickangle=35, tickfont=dict(size=11))
                 st.plotly_chart(fig_s,use_container_width=True)
     
         with fd2:
@@ -636,38 +823,36 @@ if IS_TECH:
             fog_df = fog_df[fog_df["gunning_fog_index"] <= 30]
             if not fog_df.empty:
                 fig_fog = px.scatter(fog_df,x="type_token_ratio",y="gunning_fog_index",
-                                      color="firm_name",color_discrete_map=FIRM_COLORS,height=300,
+                                      color="firm_name",
+                                      color_discrete_sequence=["#1b4332","#2d6a4f","#40916c",
+                                                               "#52b788","#74c69d","#95d5b2",
+                                                               "#b7e4c7","#d8f3dc","#081c15",
+                                                               "#1a3a28","#2d5a40","#3a7d54"],
+                                      height=360,
                                       labels={"type_token_ratio":"Type-Token Ratio (richer →)",
-                                              "gunning_fog_index":"Gunning-Fog (complex →)"},
-                                      hover_data={"year_to":True})
+                                              "gunning_fog_index":"Gunning-Fog (complex →)",
+                                              "firm_name":"Firm"},
+                                      hover_data={"year_to":True},
+                                      hover_name="firm_name")
                 fig_fog.add_vline(x=_ttr_p25,line_dash="dash",line_color="#94a3b8")
                 fig_fog.add_hline(y=_fog_p75,line_dash="dash",line_color="#94a3b8")
                 fig_fog.add_annotation(x=fog_df["type_token_ratio"].min()+0.005,y=_fog_p75+0.4,
                                         text="<b>Obfuscation Zone</b>",showarrow=False,
                                         font=dict(color="#c1121f",size=10))
-                fig_fog.update_layout(plot_bgcolor="#fafafa",paper_bgcolor="white",
-                                       font_family="Space Grotesk",showlegend=False,
-                                       margin=dict(l=10,r=10,t=10,b=40))
+                fig_fog.update_layout(plot_bgcolor="rgba(0,0,0,0)",paper_bgcolor="rgba(0,0,0,0)",
+                                       font_family="Space Grotesk",
+                                       showlegend=True,
+                                       legend=dict(orientation="v",x=1.01,y=1,font=dict(size=9)),
+                                       margin=dict(l=10,r=120,t=10,b=40))
+                fig_fog.update_traces(marker=dict(size=8, opacity=0.8))
                 st.plotly_chart(fig_fog,use_container_width=True)
     
-        # LDA topic keywords panel
-        if not lda_kw.empty:
-            st.markdown("---")
-            st.markdown("##### LDA Topic Keywords by Firm")
-            st.caption("Top keywords from the 7-topic LDA model  -  the words that define each firm's disclosure themes")
-            sel_kw_firm = st.selectbox("Firm", ALL_FIRMS, key="kw_firm")
-            firm_kws = lda_kw[lda_kw["firm_name"]==sel_kw_firm]
-            if not firm_kws.empty:
-                for _, kr in firm_kws.iterrows():
-                    words = [w.strip() for w in str(kr.get("keywords","")).split(",") if w.strip()]
-                    pills = " ".join(f'<span class="kw-pill">{w}</span>' for w in words)
-                    st.markdown(f'<div class="sig-card"><span class="sig-label">Topic {int(kr.get("topic_id",0))}</span><br>{pills}</div>',
-                                unsafe_allow_html=True)
+
     
     # ────────────────────────────────────────────────────────────────────────────
     # TAB 4: CAUSAL EVIDENCE
     # ────────────────────────────────────────────────────────────────────────────
-    with tabs[3]:
+    with tabs[2]:
         st.markdown("""<div class="info-box">
         Three specifications test whether higher VERIS scores precede higher satellite-verified emissions.
         Consistent positive direction across all three. Both placebo tests pass (non-significant).
@@ -703,7 +888,7 @@ if IS_TECH:
                     textposition="middle right",textfont=dict(size=10,family="JetBrains Mono"),
                     showlegend=False))
             fig_fp.add_vline(x=0,line_dash="dash",line_color="#94a3b8")
-            fig_fp.update_layout(height=300,plot_bgcolor="#fafafa",paper_bgcolor="white",
+            fig_fp.update_layout(height=300,plot_bgcolor="rgba(0,0,0,0)",paper_bgcolor="rgba(0,0,0,0)",
                                   font_family="Space Grotesk",xaxis_title="Coefficient",
                                   margin=dict(l=20,r=180,t=10,b=40))
             st.plotly_chart(fig_fp,use_container_width=True)
@@ -724,7 +909,7 @@ if IS_TECH:
                         "Non-EU | Pre-CSRD (before 2021)":"#93c5fd","Non-EU | Post-CSRD (2021+)":"#1d4ed8"}
                 fig_box = px.box(bd,x="group",y="sbert_drift",color="group",color_discrete_map=pal4,
                                   points="all",category_orders={"group":ord4},height=280)
-                fig_box.update_layout(showlegend=False,plot_bgcolor="#fafafa",paper_bgcolor="white",
+                fig_box.update_layout(showlegend=False,plot_bgcolor="rgba(0,0,0,0)",paper_bgcolor="rgba(0,0,0,0)",
                                        font_family="Space Grotesk",margin=dict(l=20,r=10,t=10,b=80))
                 fig_box.update_xaxes(tickangle=30)
                 st.plotly_chart(fig_box,use_container_width=True)
@@ -749,7 +934,7 @@ if IS_TECH:
     # ────────────────────────────────────────────────────────────────────────────
     # TAB 5: FIRM DEEP-DIVE  (includes signal explainer for each year-pair)
     # ────────────────────────────────────────────────────────────────────────────
-    with tabs[4]:
+    with tabs[3]:
         st.markdown("""<div class="info-box">
         Complete forensic dossier on one firm. VERIS score, satellite emissions, quadrant timeline,
         and a full signal-by-signal explanation for every year-pair including the LDA topic words detected.
@@ -792,7 +977,7 @@ if IS_TECH:
             fig_dd.add_vline(x=2021,line_dash="dash",line_color="#ea580c",line_width=1.5,
                               annotation_text="CSRD",annotation_position="top")
             fig_dd.add_hline(y=_veris_med,line_dash="dot",line_color="#c1121f",line_width=1,yref="y1")
-            fig_dd.update_layout(height=300,plot_bgcolor="#fafafa",paper_bgcolor="white",
+            fig_dd.update_layout(height=300,plot_bgcolor="rgba(0,0,0,0)",paper_bgcolor="rgba(0,0,0,0)",
                                   font_family="Space Grotesk",margin=dict(l=10,r=60,t=10,b=40),
                                   legend=dict(orientation="h",y=1.05),
                                   yaxis=dict(title="VERIS",side="left"),
@@ -813,7 +998,7 @@ if IS_TECH:
                             line=dict(width=2,color="white")),
             ))
             fig_qt.add_vline(x=2021,line_dash="dash",line_color="#ea580c",line_width=1.5)
-            fig_qt.update_layout(height=300,plot_bgcolor="#fafafa",paper_bgcolor="white",
+            fig_qt.update_layout(height=300,plot_bgcolor="rgba(0,0,0,0)",paper_bgcolor="rgba(0,0,0,0)",
                                   font_family="Space Grotesk",margin=dict(l=10,r=10,t=10,b=40),
                                   yaxis=dict(categoryorder="array",
                                               categoryarray=["Q3 Greenhushing","Q1 Genuine",
@@ -837,7 +1022,7 @@ if IS_TECH:
     # ────────────────────────────────────────────────────────────────────────────
     # TAB 6: LEADERBOARD
     # ────────────────────────────────────────────────────────────────────────────
-    with tabs[5]:
+    with tabs[4]:
         st.markdown("""<div class="info-box">
         Top 15 highest VERIS-score year-pairs. Click any row's firm + year in the
         Firm Deep-Dive tab for a full signal explanation.
@@ -877,7 +1062,7 @@ if IS_TECH:
     # ════════════════════════════════════════════════════════════════════════════
     # TAB 7: LDA TOPIC LAB   -  topic evolution, JSD-over-time, keyword deep-dive
     # ════════════════════════════════════════════════════════════════════════════
-    with tabs[6]:
+    with tabs[5]:
         st.markdown("""<div class="info-box">
         <b>Latent Dirichlet Allocation (Blei, Ng & Jordan 2003):</b> K=7 topics fit per firm,
         Jensen-Shannon divergence measures how much topic composition shifts year-over-year.
@@ -911,7 +1096,7 @@ if IS_TECH:
                                    annotation_text="t67 (Significant)", annotation_position="top right")
                 fig_jsd.add_vline(x=2021, line_dash="dash", line_color="#ea580c", line_width=1.5,
                                    annotation_text="CSRD", annotation_position="top")
-                fig_jsd.update_layout(height=340, plot_bgcolor="#fafafa", paper_bgcolor="white",
+                fig_jsd.update_layout(height=340, plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
                                        font_family="Space Grotesk",
                                        xaxis_title="Year (end of pair)", yaxis_title="Jensen-Shannon Divergence",
                                        margin=dict(l=50, r=20, t=20, b=40))
@@ -978,7 +1163,7 @@ if IS_TECH:
                                annotation_text="t33", annotation_position="top")
             fig_bar.add_vline(x=0.2091, line_dash="dot", line_color="#c1121f",
                                annotation_text="t67", annotation_position="top")
-            fig_bar.update_layout(height=380, plot_bgcolor="#fafafa", paper_bgcolor="white",
+            fig_bar.update_layout(height=380, plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
                                    font_family="Space Grotesk",
                                    xaxis_title="Mean LDA-JSD (across year-pairs)",
                                    margin=dict(l=120, r=80, t=30, b=40),
@@ -988,7 +1173,7 @@ if IS_TECH:
     # ════════════════════════════════════════════════════════════════════════════
     # TAB 8: SENSITIVITY LAB   -  5 AHP scenarios + rank spread
     # ════════════════════════════════════════════════════════════════════════════
-    with tabs[7]:
+    with tabs[6]:
         st.markdown("""<div class="info-box">
         <b>Robustness check:</b> Does VERIS classification hold under different weighting choices?
         Five AHP scenarios with Consistency Ratio &lt; 0.01, from the Balanced baseline
@@ -1024,7 +1209,7 @@ if IS_TECH:
                                              marker_color=colors[sig],
                                              text=[f"{v:.1f}%" for v in vals], textposition="inside"))
                 fig_s.update_layout(barmode="stack", height=360,
-                                      plot_bgcolor="#fafafa", paper_bgcolor="white",
+                                      plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
                                       font_family="Space Grotesk",
                                       yaxis_title="Weight (%)",
                                       margin=dict(l=50, r=20, t=30, b=40),
@@ -1067,7 +1252,7 @@ if IS_TECH:
             fig_rs.add_vline(x=median_rs, line_dash="dash", line_color="#64748b",
                                annotation_text=f"Median = {median_rs:.2f}",
                                annotation_position="top")
-            fig_rs.update_layout(height=380, plot_bgcolor="#fafafa", paper_bgcolor="white",
+            fig_rs.update_layout(height=380, plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
                                    font_family="Space Grotesk",
                                    xaxis_title="Mean rank spread across 5 scenarios",
                                    margin=dict(l=120, r=80, t=30, b=40), showlegend=False)
@@ -1084,7 +1269,7 @@ if IS_TECH:
     # ════════════════════════════════════════════════════════════════════════════
     # TAB 9: OBFUSCATION PANEL   -  the 9 flagged documents
     # ════════════════════════════════════════════════════════════════════════════
-    with tabs[8]:
+    with tabs[7]:
         st.markdown("""<div class="info-box">
         <b>Obfuscation Flag:</b> co-occurrence of high Gunning-Fog (≥ corpus Q75) AND
         low Type-Token Ratio (≤ corpus Q25). Individually neither is suspicious  - 
@@ -1158,7 +1343,7 @@ if IS_TECH:
                                 y=fog_df2["gunning_fog_index"].max() - 0.5,
                                 text="<b>Obfuscation Zone</b>", showarrow=False,
                                 font=dict(color="#c1121f", size=12))
-        fig_of.update_layout(plot_bgcolor="#fafafa", paper_bgcolor="white",
+        fig_of.update_layout(plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
                               font_family="Space Grotesk",
                               margin=dict(l=50, r=20, t=30, b=50),
                               legend=dict(orientation="h", y=1.05))
@@ -1167,7 +1352,7 @@ if IS_TECH:
     # ════════════════════════════════════════════════════════════════════════════
     # TAB 10: FIRM vs FIRM COMPARE   -  head-to-head radar
     # ════════════════════════════════════════════════════════════════════════════
-    with tabs[9]:
+    with tabs[8]:
         st.markdown("""<div class="info-box">
         Pick two firms. See all four VERIS signals plus forensic flags side-by-side.
         Useful for peer benchmarking (e.g., BP vs Shell) or adversarial comparison
@@ -1207,8 +1392,8 @@ if IS_TECH:
                                               fill="toself",
                                               name=firm_b,
                                               line=dict(color=FIRM_COLORS.get(firm_b, "#ef4444"))))
-            fig_r.update_layout(polar=dict(radialaxis=dict(visible=True, range=[0, 1])),
-                                  height=380, paper_bgcolor="white",
+            fig_r.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", polar=dict(radialaxis=dict(visible=True, range=[0, 1])),
+                                  height=380,
                                   font_family="Space Grotesk",
                                   margin=dict(l=20, r=20, t=30, b=20))
             st.plotly_chart(fig_r, use_container_width=True)
@@ -1256,8 +1441,8 @@ if IS_TECH:
                                 color=[QUAD_COLORS.get(q, "#888") for q in fv["quadrant_short"]],
                                 line=dict(width=2, color="white"))))
                 fig_tl.add_vline(x=2021, line_dash="dash", line_color="#ea580c", line_width=1.5)
-                fig_tl.update_layout(title=dict(text=firm, x=0.5),
-                                       height=260, plot_bgcolor="#fafafa", paper_bgcolor="white",
+                fig_tl.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", title=dict(text=firm, x=0.5),
+                                       height=260,
                                        font_family="Space Grotesk",
                                        yaxis=dict(categoryorder="array",
                                                    categoryarray=["Q3 Greenhushing", "Q1 Genuine",
@@ -1269,7 +1454,6 @@ if IS_TECH:
 else:
     tabs = st.tabs([
         "🎯 Executive Summary",
-        "📊 Greenwashing Matrix",
         "🏢 My Firm / Portfolio",
         "🛠️ Action Playbook",
         "🏆 Top 15 Risk List",
@@ -1457,87 +1641,9 @@ else:
         """, unsafe_allow_html=True)
 
     # ════════════════════════════════════════════════════════════════════════════
-    # BIZ TAB 2: GREENWASHING MATRIX  -  simplified narrative version
-    # ════════════════════════════════════════════════════════════════════════════
-    with tabs[1]:
-        st.markdown("""<div class="info-box">
-        Every dot is one firm in one year-pair. The horizontal axis is how much the
-        firm's <b>disclosure language</b> changed (VERIS). The vertical axis is how much
-        their <b>actual emissions</b> changed (satellite-verified). Top-right means language
-        changed while emissions didn't  -  that's the greenwashing signal.
-        </div>""", unsafe_allow_html=True)
-
-        bf1, bf2 = st.columns([2, 2])
-        with bf1:
-            biz_firms = st.multiselect("Filter to specific firms", ALL_FIRMS,
-                                        default=ALL_FIRMS, key="biz_m_firms")
-        with bf2:
-            biz_yr_min, biz_yr_max = int(VALID["year_to"].min()), int(VALID["year_to"].max())
-            biz_yr = st.slider("Year range", biz_yr_min, biz_yr_max,
-                                (biz_yr_min, biz_yr_max), key="biz_m_yr")
-
-        biz_mat = VALID[VALID["firm_name"].isin(biz_firms)]
-        biz_mat = biz_mat[biz_mat["year_to"].between(*biz_yr)]
-        biz_mat = biz_mat.copy()
-        if not biz_mat.empty:
-            biz_mat["hover_label"] = (biz_mat["firm_name"].astype(str) + " " +
-                                       biz_mat["year_from"].astype("Int64").astype(str) + "→" +
-                                       biz_mat["year_to"].astype("Int64").astype(str))
-            biz_mat["emissions_delta_pct_display"] = biz_mat["emissions_delta_pct"] * 100
-        else:
-            biz_mat["hover_label"] = pd.Series(dtype=str)
-            biz_mat["emissions_delta_pct_display"] = pd.Series(dtype=float)
-
-        if biz_mat.empty:
-            st.warning("No data for current filter combination. Reset filters to see the matrix.")
-        else:
-            fig_bm = px.scatter(biz_mat, x="veris_score", y="emissions_delta_pct_display",
-                                 color="quadrant_short", color_discrete_map=QUAD_COLORS,
-                                 size_max=15, hover_name="hover_label",
-                                 labels={"veris_score": "Disclosure Language Change (VERIS)",
-                                         "emissions_delta_pct_display": "Satellite-Verified Emissions Change (%)",
-                                         "quadrant_short": "Quadrant"}, height=460)
-            fig_bm.add_vline(x=_veris_med, line_dash="dash", line_color="#94a3b8",
-                              annotation_text=f"Median VERIS = {_veris_med:.3f}")
-            fig_bm.add_hline(y=0, line_dash="dot", line_color="#94a3b8")
-            for txt, x, y, c in [("Q2 GREENWASHING", 0.72, 4, "#c1121f"),
-                                  ("Q1 GENUINE PROGRESS", 0.72, -9, "#1a7340"),
-                                  ("Q4 STAGNANT", 0.12, 4, "#6b7280"),
-                                  ("Q3 GREENHUSHING", 0.12, -9, "#e07b00")]:
-                fig_bm.add_annotation(x=x, y=y, text=f"<b>{txt}</b>", showarrow=False,
-                                        font=dict(color=c, size=11), opacity=0.5)
-            fig_bm.update_layout(plot_bgcolor="#fafafa", paper_bgcolor="white",
-                               font_family="Space Grotesk",
-                               margin=dict(l=60, r=20, t=30, b=50),
-                               legend=dict(orientation="h", y=1.08))
-            st.plotly_chart(fig_bm, use_container_width=True)
-
-        # Narrative interpretation
-        bn1, bn2, bn3, bn4 = st.columns(4)
-        for col, (q, label, color, meaning) in zip([bn1, bn2, bn3, bn4], [
-            ("Q1 Genuine", "GENUINE PROGRESS", "#1a7340",
-             "High VERIS + falling emissions. Authentic disclosure-performance alignment. CSRD credibility is highest here."),
-            ("Q2 Greenwashing", "GREENWASHING SIGNAL", "#c1121f",
-             "High VERIS + rising/flat emissions. Language restructured but operations haven't. Highest legal and reputational exposure."),
-            ("Q3 Greenhushing", "GREENHUSHING", "#e07b00",
-             "Static language + falling emissions. Real progress being under-reported. Forgone reputational and stewardship value."),
-            ("Q4 Stagnant", "STAGNANT BASELINE", "#6b7280",
-             "Neither language nor operations changed. Confirms VERIS isn't generating false positives."),
-        ]):
-            with col:
-                n_pairs = (biz_mat["quadrant_short"] == q).sum()
-                st.markdown(f"""
-                <div style="border-top:4px solid {color};background:#f8fafc;border-radius:6px;
-                            padding:12px 14px;height:100%;">
-                    <div style="font-family:JetBrains Mono;font-size:1.4rem;color:{color};font-weight:700;">{n_pairs}</div>
-                    <div style="font-size:.7rem;letter-spacing:.08em;color:{color};font-weight:700;">{label}</div>
-                    <div style="font-size:.78rem;color:#475569;margin-top:8px;line-height:1.4;">{meaning}</div>
-                </div>""", unsafe_allow_html=True)
-
-    # ════════════════════════════════════════════════════════════════════════════
     # BIZ TAB 3: MY FIRM / PORTFOLIO  -  firm-centric executive view
     # ════════════════════════════════════════════════════════════════════════════
-    with tabs[2]:
+    with tabs[1]:
         st.markdown("""<div class="info-box">
         Portfolio managers and sustainability officers: select your firm (or your holdings).
         You'll see the quadrant timeline, VERIS-vs-emissions dual trajectory,
@@ -1619,7 +1725,7 @@ else:
                                               yaxis="y2"))
             fig_bd.add_vline(x=2021, line_dash="dash", line_color="#ea580c", line_width=1.5,
                               annotation_text="CSRD")
-            fig_bd.update_layout(height=300, plot_bgcolor="#fafafa", paper_bgcolor="white",
+            fig_bd.update_layout(height=300, plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
                                    font_family="Space Grotesk",
                                    margin=dict(l=10, r=60, t=10, b=40),
                                    legend=dict(orientation="h", y=1.05),
@@ -1641,7 +1747,7 @@ else:
                             color=[QUAD_COLORS.get(q, "#888") for q in my_valid["quadrant_short"]],
                             line=dict(width=2, color="white"))))
             fig_bt.add_vline(x=2021, line_dash="dash", line_color="#ea580c", line_width=1.5)
-            fig_bt.update_layout(height=300, plot_bgcolor="#fafafa", paper_bgcolor="white",
+            fig_bt.update_layout(height=300, plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
                                    font_family="Space Grotesk",
                                    yaxis=dict(categoryorder="array",
                                                categoryarray=["Q3 Greenhushing", "Q1 Genuine",
@@ -1652,7 +1758,7 @@ else:
     # ════════════════════════════════════════════════════════════════════════════
     # BIZ TAB 4: ACTION PLAYBOOK  -  7 personas, tailored workflows
     # ════════════════════════════════════════════════════════════════════════════
-    with tabs[3]:
+    with tabs[2]:
         st.markdown("""<div class="info-box">
         Select your role. The playbook shows the specific VERIS workflow for your function,
         with a live example using data from the panel.
@@ -1836,9 +1942,9 @@ else:
             """)
 
     # ════════════════════════════════════════════════════════════════════════════
-    # BIZ TAB 5: TOP 15 RISK LIST  -  leaderboard for exec consumption
+    # BIZ TAB 4: TOP 15 RISK LIST  -  leaderboard for exec consumption
     # ════════════════════════════════════════════════════════════════════════════
-    with tabs[4]:
+    with tabs[3]:
         st.markdown("""<div class="info-box">
         The 15 highest-VERIS year-pairs in the panel. Think of this as the
         <b>exception report</b>  -  the firms and years that need a closer look.
@@ -1881,3 +1987,4 @@ else:
         quadrant column reflect Climate TRACE coverage gaps at 2020→2021 and are not
         usable evidence  -  treat them with caution.
         </div>""", unsafe_allow_html=True)
+# ── Footer ────────────────────────────────────────────────────────────────────
