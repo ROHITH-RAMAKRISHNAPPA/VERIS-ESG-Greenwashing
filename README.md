@@ -63,7 +63,7 @@ Corpus median VERIS = 0.162.
 
 
 ## Repository Structure
-.
+```
 ├── notebooks/
 │   ├── 00_config.ipynb            # paths, constants, firm roster
 │   ├── 01_pdf_extraction.ipynb    # 3-layer OCR: pdfplumber -> pdfminer -> docTR
@@ -85,7 +85,7 @@ Corpus median VERIS = 0.162.
 │   └── ct_country_backfill.py
 │
 └── requirements.txt
-
+```
 
 
 ## Run Order
