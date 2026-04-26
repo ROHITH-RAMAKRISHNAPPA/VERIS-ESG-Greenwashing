@@ -1,6 +1,6 @@
 """
 VERIS -- Forensic ESG Greenwashing Audit Dashboard
-VERIS: Detecting Greenwashing Through Satellite-Verified NLP | Group 9 | April 2026
+VERIS: Detecting Greenwashing Through Satellite-Verified NLP 
 
 CSV DATA PROVENANCE (every number traces back to a notebook):
   veris_master.csv        <- notebook 04  (CT mapping + AHP-TOPSIS + VERIS)
@@ -480,9 +480,6 @@ st.markdown("""
 <div style="padding:18px 0 8px 0;">
   <div style="font-size:1.9rem;font-weight:800;color:#1b4332;letter-spacing:-0.5px;line-height:1.1;">
     🛰️ VERIS: Detecting Greenwashing Through Satellite-Verified NLP
-  </div>
-  <div style="font-size:0.85rem;color:#4a7c59;margin-top:4px;">
-    Verified Emissions vs. Reported Information Score &nbsp;·&nbsp; 12 Firms &nbsp;·&nbsp; 2014–2024 &nbsp;·&nbsp; Climate TRACE v5.4.1 &nbsp;·&nbsp; Group 9
   </div>
 </div>
 """, unsafe_allow_html=True)
