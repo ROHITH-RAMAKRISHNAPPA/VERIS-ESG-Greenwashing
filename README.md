@@ -126,11 +126,8 @@ D_it = m(X_it) + v_it
 Y  = year-on-year CO2e delta (%)
 D  = 1 if year_to >= 2022 AND firm is EU-obligated, else 0
 X  = {lagged VERIS score, log CO2e, EU firm flag, sector dummies}
-```
 
 Nuisance functions estimated by LassoCV with 5-fold cross-fitting and RidgeCV fallback. HC3-robust standard errors.
-
-
 
 ## Team
 
