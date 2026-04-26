@@ -1,16 +1,16 @@
 # VERIS: Detecting Greenwashing Through Satellite-Verified NLP
 
-> A forensic NLP pipeline that cross-validates corporate sustainability disclosures against satellite-calibrated facility-level CO₂e emissions from Climate TRACE v5.4.1.
+A forensic NLP pipeline that cross-validates corporate sustainability disclosures against satellite-calibrated facility-level CO₂e emissions from Climate TRACE v5.4.1.
 
 
-## 🛰️ Live Dashboard
+## Live Dashboard
 
-> **[Launch VERIS Dashboard](https://veris-esg-greenwashing.streamlit.app)** — hosted on Streamlit Community Cloud
+**[Launch VERIS Dashboard](https://veris-esg-greenwashing.streamlit.app)** — hosted on Streamlit Community Cloud
 
 
-## 📄 Project Report & Data
+## Project Report & Data
 
-> **[Google Drive — Full Report, Data & Appendix](https://drive.google.com/drive/folders/1gmEkyJPpQO3aK7Ij0Lz9mPKUFhZFLizG?usp=sharing)**
+**[Google Drive - Full Report, Data & Appendix](https://drive.google.com/drive/folders/1gmEkyJPpQO3aK7Ij0Lz9mPKUFhZFLizG?usp=sharing)**
 
 Includes the submitted PDF report, appendix (AI declaration, data dictionary, roles), and supporting data files that are too large for GitHub.
 
@@ -114,7 +114,7 @@ streamlit run notebooks/VERIS_ESG_Greenwashing.py
 - **Sustainability Reports**: Collected from corporate investor-relations portals (2014-2024). 119 PDFs across 12 firms. Available via the [Google Drive folder](https://drive.google.com/drive/folders/1gmEkyJPpQO3aK7Ij0Lz9mPKUFhZFLizG?usp=sharing).
 - **Emissions Data**: [Climate TRACE v5.4.1](https://climatetrace.org/downloads) under Creative Commons Attribution 4.0. Pre-2021 uses a country-share proxy. The 2020-2021 year-pairs are excluded from all causal panels due to a measurement-regime transition artefact (66-99% apparent emissions drop).
 
-> Raw PDFs and Climate TRACE CSVs are not tracked in this repository due to file size. See the Google Drive folder above.
+Raw PDFs and Climate TRACE CSVs are not tracked in this repository due to file size. See the Google Drive folder above.
 
 
 
