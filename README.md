@@ -5,7 +5,7 @@ A forensic NLP pipeline that cross-validates corporate sustainability disclosure
 
 ## Live Dashboard
 
-**[Launch VERIS Dashboard](https://veris-esg-greenwashing.streamlit.app)** — hosted on Streamlit Community Cloud
+**[Launch VERIS Dashboard](https://veris-esg-greenwashing.streamlit.app)** - hosted on Streamlit Community Cloud
 
 
 ## Project Report & Data
@@ -63,8 +63,6 @@ Corpus median VERIS = 0.162.
 
 
 ## Repository Structure
-
-```
 .
 ├── notebooks/
 │   ├── 00_config.ipynb            # paths, constants, firm roster
@@ -87,7 +85,6 @@ Corpus median VERIS = 0.162.
 │   └── ct_country_backfill.py
 │
 └── requirements.txt
-```
 
 
 
