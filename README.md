@@ -10,7 +10,7 @@ A forensic NLP pipeline that cross-validates corporate sustainability disclosure
 
 ## Project Report & Data
 
-**[Google Drive - Full Report, Data & Appendix](https://drive.google.com/drive/folders/1gmEkyJPpQO3aK7Ij0Lz9mPKUFhZFLizG?usp=sharing)**
+**[Google Drive - Data](https://drive.google.com/drive/folders/1gmEkyJPpQO3aK7Ij0Lz9mPKUFhZFLizG?usp=sharing)**
 
 Includes the submitted PDF report, appendix (AI declaration, data dictionary, roles), and supporting data files that are too large for GitHub.
 
